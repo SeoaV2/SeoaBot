@@ -10,6 +10,7 @@
 - [ ] >set, >setting, >설정, >settings 
 - [ ] >blacklist, >black, >블랙리스트, >블랙
 - [ ] >업뎃 >업데이트 >다운그래이드(?)
+- [ ] >상태 >status
 
 # Develop
 - 카테고리 별로 폴더 
