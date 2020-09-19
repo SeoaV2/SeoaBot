@@ -1,0 +1,23 @@
+{
+  "name": "seoabot",
+  "version": "3.0.0",
+  "description": "The Discord bot which was named Seoa",
+  "main": "index.js",
+  "repository": "git@github.com:SeoaV2/SeoaBot.git",
+  "author": "Park Min Hyeok <pmhstudio.pmh@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  },
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "i18n": "^0.13.2",
+    "knex": "^0.21.5",
+    "mysql": "^2.18.1"
+  }
+}

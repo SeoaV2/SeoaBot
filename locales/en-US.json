@@ -1,0 +1,12 @@
+{
+	"about": {
+		"greeting": "Welcome to Seoa!\nBefore start, we need to collect some user infomations.\n\nFollowing user infomation will be collected:\n- User ID",
+		"ping": {
+			"status": "API Latency: %sms\nMessage Event: %sms",
+			"success": "Ping test result",
+			"testing": "Ping test in progress..."
+		},
+		"invite": "Invite Bot!"
+	},
+	"greeting": "greeting"
+}
