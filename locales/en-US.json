@@ -6,7 +6,25 @@
 			"success": "Ping test result",
 			"testing": "Ping test in progress..."
 		},
-		"invite": "Invite Bot!"
+		"invite": "Invite Bot!",
+		"info": {
+			"title": "Infomation of %s",
+			"keys": {
+				"tag": "Discord Tag",
+				"commands": "Commands",
+				"users": "Users",
+				"channels": "Channels",
+				"guilds": "Servers",
+				"uptime": "Uptime"
+			},
+			"values": {
+				"commands": "%s commands",
+				"users": "%s users",
+				"channels": "%s channels",
+				"guilds": "%s servers",
+				"uptime": "%sms"
+			}
+		}
 	},
 	"greeting": "greeting"
 }

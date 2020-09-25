@@ -24,8 +24,11 @@ async function onMessage (client, msg) {
       command.aliases.includes(query.cmd)
   )
 
+  const locale = (phrase, ...args) =>
+    client.i18n.__({ phrase, locale: msg.author.locale }, ...args)
+
   if (!target) return
-  target(client, msg)
+  target(client, msg, locale)
 }
 
 module.exports = onMessage

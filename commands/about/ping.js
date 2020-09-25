@@ -4,14 +4,14 @@ const { MessageEmbed } = require('discord.js')
  * @param {import('../../classes/Client')} client
  * @param {import('discord.js').Message} msg
 */
-async function fn (client, msg) {
-  const embed = new MessageEmbed({ color: 0xff0000, title: client.i18n.__({ phrase: 'about.ping.testing', locale: msg.author.locale }) })
+async function fn (client, msg, locale) {
+  const embed = new MessageEmbed({ color: 0xff0000, title: locale('about.ping.testing') })
   const m = await msg.channel.send(embed)
   const ping = Math.floor((m.createdTimestamp - msg.createdTimestamp) * 100) / 100
   embed
     .setColor(0xff5ae5)
-    .setTitle(client.i18n.__({ phrase: 'about.ping.success', locale: msg.author.locale }))
-    .setDescription(client.i18n.__({ phrase: 'about.ping.status', locale: msg.author.locale }, client.ws.ping, ping))
+    .setTitle(locale('about.ping.success'))
+    .setDescription(locale('about.ping.status', client.ws.ping, ping))
   m.edit(embed)
 }
 
