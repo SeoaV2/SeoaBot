@@ -2,11 +2,11 @@
 - [x] >ping, >pong
 - [x] >invite, >초대링크, >봇초대링크
 - [x] >botinfo, >봇정보
+- [x] >quiz, >퀴즈
+- [ ] >leader, >leaderboard, >리더보드, >리더, >보드
 - [ ] >m, >music, >뮤직, >음악
 - [ ] >mylist, >재생목록, >마이리스트
 - [ ] >help, >도움, >도움말
-- [ ] >leader, >leaderboard, >리더보드, >리더, >보드
-- [ ] >quiz, >퀴즈
 - [ ] >set, >setting, >설정, >settings 
 - [ ] >blacklist, >black, >블랙리스트, >블랙
 - [ ] >업뎃 >업데이트 >다운그래이드(?)

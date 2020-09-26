@@ -26,5 +26,20 @@
 			}
 		}
 	},
-	"greeting": "greeting"
+	"quiz": {
+		"play": {
+			"title": "%s is solving...",
+			"descript": "[`Quiz request, report`](%s)",
+			"qtitle": "Q%d. about %s",
+			"notfound": "Cannot find quiz #%d",
+			"wrong": "Wrong Answer :(",
+			"correct": "Correct Answer! You earned %d point(s)"
+		},
+		"leaderboard": {
+			"title": "**Top 10 players of codequiz:**",
+			"real": "%s (%s), %d points",
+			"hidden": "<Unknown player> (%s), %d points",
+			"footer": "you have `%d point(s)`, i think you're `%s`"
+		}
+	}
 }

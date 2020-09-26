@@ -15,14 +15,15 @@ async function onMessage (client, msg) {
   let [userdata] = await client.db.select('locale').where('id', msg.author.id).from('userdata')
   if (!userdata) { await registUser(client, msg); userdata = { locale: 'en-US' } }
 
-  msg.author.locale = userdata.locale
-
   const query = new Query(prefix, content)
   const target = client.commands.find(
     (command = { aliases: [] }) =>
       typeof command === 'function' &&
       command.aliases.includes(query.cmd)
   )
+
+  msg.author.locale = userdata.locale
+  msg.query = query
 
   const locale = (phrase, ...args) =>
     client.i18n.__({ phrase, locale: msg.author.locale }, ...args)

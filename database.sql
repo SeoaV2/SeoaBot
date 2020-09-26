@@ -7,7 +7,8 @@ create table userdata
 (
 	id varchar(20) not null,
 	locale varchar(5) default 'en-US' not null,
-	registedAt TIMESTAMP default CURRENT_TIMESTAMP not null
+	registedAt TIMESTAMP default CURRENT_TIMESTAMP not null,
+	quizscore int default 0 not null;
 );
 
 create unique index userdata_id_uindex

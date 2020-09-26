@@ -10,7 +10,7 @@ async function fn (client, msg, locale) {
     title: locale('about.invite'),
     url: 'https://discord.com/oauth2/authorize?client_id=' + client.user.id + '&permissions=0&scope=bot',
     color: 0xff5ae5
-  })
+  }).setThumbnail(client.user.avatarURL())
   msg.channel.send(embed)
 }
 

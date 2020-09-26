@@ -18,7 +18,7 @@ async function fn (client, msg, locale) {
       { name: locale('about.info.keys.guilds'),   value: locale('about.info.values.guilds',   client.guilds.cache.size),   inline: true },
       { name: locale('about.info.keys.uptime'),   value: locale('about.info.values.uptime',   client.uptime),              inline: true }
     ]
-  })
+  }).setThumbnail(client.user.avatarURL())
   msg.channel.send(embed)
 }
 
