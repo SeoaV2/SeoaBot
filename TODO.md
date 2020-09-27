@@ -5,9 +5,9 @@
 - [x] >quiz, >퀴즈
 - [x] >leader, >leaderboard, >리더보드, >리더, >보드
 - [x] >set, >setting, >설정, >settings 
+- [x] >help, >도움, >도움말
 - [ ] >m, >music, >뮤직, >음악
 - [ ] >mylist, >재생목록, >마이리스트
-- [ ] >help, >도움, >도움말
 - [ ] >blacklist, >black, >블랙리스트, >블랙
 
 # Develop

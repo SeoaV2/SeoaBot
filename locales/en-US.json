@@ -50,5 +50,17 @@
 		"localenotfound": "Locale `%s` is not found",
 		"locales": "Available locales:",
 		"novalue": "Usage: `%sset <key> <value>`"
+	},
+	"help": {
+		"title": "Command Book of %s",
+		"desc": {
+			"botinfo": "**My secrets.**\nshow infomations of this bot (expect token)",
+			"help": "**Can I help you?**\nshow this message",
+			"invite": "**You and me, now**\nshow invite link of this bot",
+			"ping": "**Ping! Pong with ttakkku**\nshow message latency",
+			"leader": "**Now, who is the leader?**\nshow codequiz leaderboard",
+			"quiz": "**What? you're good at programming?**\nplay codequiz",
+			"set": "**i dOnT LikE tHiS SeTting**\nset user preference"
+		} 
 	}
 }
