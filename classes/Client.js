@@ -1,6 +1,8 @@
 const { resolve: path } = require('path')
 const { Client } = require('discord.js')
 const { existsSync } = require('fs')
+const lavalinkUtils = require('../utils/lavalink')
+const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const knex = require('knex')
@@ -38,8 +40,17 @@ class eClient extends Client {
         })
     } else throw new Error('./commands/ folder not exists')
 
+    lavalinkUtils.start()
+
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
+    this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
+    this.on('ready', () => {
+      setTimeout(() => {
+        this.lavalink.connect()
+        console.log('lavalink connected')
+      }, 5000)
+    })
   }
 
   start (token = this.settings.token) {

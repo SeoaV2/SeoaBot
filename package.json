@@ -15,9 +15,12 @@
     "eslint-plugin-standard": "^4.0.1"
   },
   "dependencies": {
+    "@lavacord/discord.js": "^0.0.7",
     "discord.js": "^12.3.1",
     "i18n": "^0.13.2",
     "knex": "^0.21.5",
-    "mysql": "^2.18.1"
+    "lavacord": "^1.1.9",
+    "mysql": "^2.18.1",
+    "superagent": "^6.1.0"
   }
 }

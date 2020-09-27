@@ -120,3 +120,5 @@ package-lock.json
 
 # config
 config.json
+
+lavalink/lavalink.jar
