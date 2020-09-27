@@ -41,5 +41,14 @@
 			"hidden": "<Unknown player> (%s), %d points",
 			"footer": "you have `%d point(s)`, i think you're `%s`"
 		}
+	},
+	"settings": {
+		"title": "User Data Set",
+		"desc": "you can set values like `%sset <key> <value>`",
+		"notmodfiable": "oops, you cannot modify `%s`",
+		"done": "Setting `%s` to `%s` is done",
+		"localenotfound": "Locale `%s` is not found",
+		"locales": "Available locales:",
+		"novalue": "Usage: `%sset <key> <value>`"
 	}
 }
