@@ -18,4 +18,19 @@ async function getSongs (node, search) {
   return res.body
 }
 
-module.exports = { start, getSongs }
+/**
+ * @param {import('lavacord').LavalinkNode} node
+ * @param {string} track
+ */
+
+async function getDecode (node, track) {
+  const params = new URLSearchParams()
+  params.append('track', track)
+  const res =
+    await get('http://' + node.host + ':' + node.port + '/decodetrack?' + params)
+      .set('Authorization', node.password)
+
+  return res.body
+}
+
+module.exports = { start, getSongs, getDecode }

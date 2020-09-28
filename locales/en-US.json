@@ -64,11 +64,14 @@
 			"join": "help.desc.join",
 			"leave": "help.desc.leave",
 			"play": "help.desc.play",
-			"pause":"help.desc.pause",
-			"resume":"help.desc.resume",
-			"stop":"help.desc.stop",
-			"seek":"help.desc.seek",
-			"volume":"help.desc.volume"
+			"pause": "help.desc.pause",
+			"resume": "help.desc.resume",
+			"stop": "help.desc.stop",
+			"seek": "help.desc.seek",
+			"volume": "help.desc.volume",
+			"equalizer": "help.desc.equalizer",
+			"multiplay": "help.desc.multiplay",
+			"nowplaying":"help.desc.playing"
 		}
 	}
 }
