@@ -16,7 +16,7 @@ async function fn (client, msg, locale) {
     const embed = new MessageEmbed({ color: 0xff5ae5 })
 
     for (const key of Object.keys(data.info)) {
-      embed.addField(key, data.info[key])
+      embed.addField(key, data.info[key], true)
     }
 
     msg.channel.send(embed)
