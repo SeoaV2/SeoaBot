@@ -10,12 +10,12 @@ async function fn (client, msg, locale) {
     let player = client.lavalink.players.get(msg.guild.id)
     if (player.playing == false) return msg.channel.send("wtf")
     let data = await getDecode(client.lavalink.nodes.get('main'), player.track)
-
+    if (!data) return msg.channel.send('응~ 없어')
     const embed = new MessageEmbed({ color: 0xff5ae5 })
 
     for (const key of Object.keys(data)) {
       if (data[key] == data.identifier) continue
-      else embed.addField(key, data[key])
+      else embed.addField(key, data[key], true)
     }
   
     msg.channel.send(embed)

@@ -18,7 +18,7 @@ async function fn (client, msg, locale) {
 
   for (const key of Object.keys(data.info)) {
     if (data.info[key] == data.info.identifier) continue
-    else embed.addField(key, data.info[key])
+    else embed.addField(key, data.info[key], true)
   }
 
   msg.channel.send(embed)
