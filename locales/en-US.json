@@ -71,7 +71,8 @@
 			"volume": "help.desc.volume",
 			"equalizer": "help.desc.equalizer",
 			"multiplay": "help.desc.multiplay",
-			"nowplaying":"help.desc.playing"
+			"nowplaying":"help.desc.playing",
+			"search":"help.desc.search"
 		}
 	}
 }
