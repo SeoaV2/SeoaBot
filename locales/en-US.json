@@ -74,7 +74,9 @@
 			"nowplaying": "help.desc.playing",
 			"search": "help.desc.search",
 			"fix": "help.desc.fix",
-			"np": "help.desc.np"
+			"np": "help.desc.np",
+			"skip": "help.desc.skip",
+			"queue": "help.desc.queue"
 		}
 	}
 }

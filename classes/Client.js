@@ -6,6 +6,7 @@ const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const knex = require('knex')
+const musicdb  = require('redis').createClient(6379,'127.0.0.1', null)
 
 class eClient extends Client {
   constructor () {
@@ -51,6 +52,9 @@ class eClient extends Client {
         console.log('lavalink connected')
       }, 5000)
     })
+    this.musicdb = musicdb
+    this.musicdb.on('ready', () => console.log("redis ready"))
+    this.musicdb.on('connect', () => console.log('redis connect')) 
   }
 
   start (token = this.settings.token) {

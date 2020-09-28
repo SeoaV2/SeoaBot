@@ -14,16 +14,18 @@ async function fn (client, msg, locale) {
   if (data) {
     player.play(data.track)
     const embed = new MessageEmbed({ color: 0xff5ae5 })
-
+    //if (client.musicdb.exists('name') == 0)  // 있으면 1 없으면 0
+    // await client.musicdb.rpush(msg.guild.id, data.track)
     for (const key of Object.keys(data.info)) {
       embed.addField(key, data.info[key], true)
     }
-
     msg.channel.send(embed)
   } else if (!data) {
     const [data1] = (await getSongs(client.lavalink.nodes.get('main'), 'scsearch:' + msg.query.args.join(' '))).tracks
     player.play(data1.track)
     const embed = new MessageEmbed({ color: 0xff5ae5 })
+
+    await client.musicdb.rpush(msg.guild.id, data1.track)
 
     for (const key of Object.keys(data1.info)) {
       embed.addField(key, data1.info[key])
@@ -31,7 +33,13 @@ async function fn (client, msg, locale) {
 
     msg.channel.send(embed)
   } else msg.channel.send('응~ 없어')
+  
+  player.once("end", data => {
+    if (data.reason === "REPLACED") return; // Ignore REPLACED reason to prevent skip loops
+    // Play next song
+    
+});
 }
-
+// 저거 받아서 저장하고 나중에 틀게 해야 겠네
 module.exports = fn
 module.exports.aliases = ['play']

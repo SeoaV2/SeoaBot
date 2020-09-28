@@ -8,6 +8,7 @@ async function fn (client, msg) {
   const player = client.lavalink.players.get(msg.guild.id)
   player.stop()
   msg.channel.send('byebye')
+  musicdb.del(msg.guild.id)
   client.lavalink.leave(msg.guild.id)
 }
 
