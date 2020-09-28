@@ -1,6 +1,6 @@
 const path = require('path').resolve()
 const { exec } = require('child_process')
-const { get } = require('superagent')
+const { get, post } = require('superagent')
 
 const start = () => exec('bash -c "' + path + '/utils/lavalink.sh"', console.log)
 
@@ -24,6 +24,12 @@ async function getSongs (node, search) {
  */
 
 async function getDecode (node, track) {
+  if (Array.isArray(track)) {
+    const res = post('http://' + node.host +':'+ node.port + '/decodetracks')
+      .set('Authorization', node.password)
+      .send(track)
+    return (await res).body
+} else {
   const params = new URLSearchParams()
   params.append('track', track)
   const res =
@@ -31,6 +37,7 @@ async function getDecode (node, track) {
       .set('Authorization', node.password)
 
   return res.body
+}
 }
 
 module.exports = { start, getSongs, getDecode }
