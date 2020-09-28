@@ -60,7 +60,15 @@
 			"ping": "**Ping! Pong with ttakkku**\nshow message latency",
 			"leader": "**Now, who is the leader?**\nshow codequiz leaderboard",
 			"quiz": "**What? you're good at programming?**\nplay codequiz",
-			"set": "**i dOnT LikE tHiS SeTting**\nset user preference"
-		} 
+			"set": "**i dOnT LikE tHiS SeTting**\nset user preference",
+			"join": "help.desc.join",
+			"leave": "help.desc.leave",
+			"play": "help.desc.play",
+			"pause":"help.desc.pause",
+			"resume":"help.desc.resume",
+			"stop":"help.desc.stop",
+			"seek":"help.desc.seek",
+			"volume":"help.desc.volume"
+		}
 	}
 }
