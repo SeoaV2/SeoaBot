@@ -8,5 +8,6 @@ musicdb.lpush('fruits', 'banana', 'pear');
 musicdb.lrange('fruits', 0, -1, (err, arr) => {
   console.log(arr); // ['pear', 'banana', 'apple', 'orange', 'apple']
 });
+musicdb.set('dasd', 'sad')
 
 musicdb.del('fruits');
