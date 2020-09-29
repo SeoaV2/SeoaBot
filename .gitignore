@@ -121,4 +121,9 @@ package-lock.json
 # config
 config.json
 
+# Lavalink
 lavalink/lavalink.jar
+
+# Vim swap file
+*.swp
+*.swo
