@@ -37,7 +37,8 @@ async function fn (client, msg, locale) {
   player.once("end", data => {
     if (data.reason === "REPLACED") return; // Ignore REPLACED reason to prevent skip loops
     // Play next song
-    client.musicdb.del(msg.guild.id)
+    await client.musicdb.del(msg.guild.id) //매우 작동 잘됨
+    client.lavalink.leave(msg.guild.id) // TODO: make play loop
   })
 }
 // 저거 받아서 저장하고 나중에 틀게 해야 겠네
