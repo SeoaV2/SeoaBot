@@ -15,7 +15,7 @@ async function fn (client, msg, locale) {
     player.play(data.track)
     const embed = new MessageEmbed({ color: 0xff5ae5 })
     //if (client.musicdb.exists('name') == 0)  // 있으면 1 없으면 0
-    // await client.musicdb.rpush(msg.guild.id, data.track)
+    await client.musicdb.rpush(msg.guild.id, data.track)
     for (const key of Object.keys(data.info)) {
       embed.addField(key, data.info[key], true)
     }
@@ -37,8 +37,8 @@ async function fn (client, msg, locale) {
   player.once("end", data => {
     if (data.reason === "REPLACED") return; // Ignore REPLACED reason to prevent skip loops
     // Play next song
-    
-});
+    client.musicdb.del(msg.guild.id)
+  })
 }
 // 저거 받아서 저장하고 나중에 틀게 해야 겠네
 module.exports = fn
