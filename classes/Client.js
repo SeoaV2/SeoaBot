@@ -41,7 +41,7 @@ class eClient extends Client {
         })
     } else throw new Error('./commands/ folder not exists')
 
-    lavalinkUtils.start()
+  lavalinkUtils.start()
 
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
