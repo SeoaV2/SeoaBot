@@ -1,6 +1,6 @@
 const path = require('path').resolve()
 const { exec } = require('child_process')
-const { get } = require('superagent')
+const { get, post } = require('superagent')
 
 const start = () => exec('bash -c "' + path + '/utils/lavalink.sh"', console.log)
 
