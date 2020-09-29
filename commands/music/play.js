@@ -36,7 +36,6 @@ async function fn (client, msg, locale) {
   // 문제점 1. end를 어디에 넣을 것이냐
   player.once("end", data => {
     if (data.reason === "REPLACED") return; 
-    // Play next song
    // await client.musicdb.del(msg.guild.id) //매우 작동 잘됨
    client.musicdb.lrange(msg.guild.id, 0, -1, async (err, data)=>{
     if(err){
