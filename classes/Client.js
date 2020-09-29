@@ -6,16 +6,21 @@ const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const knex = require('knex')
+const debug = require('debug')('seoabot:client')
 
 class eClient extends Client {
   constructor () {
+    debug('Starting up')
+
     super()
     this._ = {}
 
+    debug('Check the existance of %o', 'config.json')
     this._settingPath = path() + '/config.json'
     this._settingHas = existsSync(this._settingPath)
 
     if (this._settingHas) {
+      debug('Load config')
       const {
         token = process.env.TOKEN,
         prefix = (process.env.PREFIX || '>'),
@@ -26,10 +31,12 @@ class eClient extends Client {
       this.settings = { token, prefix, ...settings }
     }
 
+    debug('Check the existance of %o folder', 'commands')
     this._commandsPath = path() + '/commands'
     this._commandsHas = existsSync(this._commandsPath)
 
     if (this._commandsHas) {
+      debug('Load command files')
       this.commands = []
       readRecursively(this._commandsPath)
         .forEach((command) => {
@@ -42,6 +49,7 @@ class eClient extends Client {
 
     lavalinkUtils.start()
 
+    debug('Initialize database')
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
     this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
@@ -54,10 +62,12 @@ class eClient extends Client {
   }
 
   start (token = this.settings.token) {
+    debug('Login to Discord')
     this.login(token)
   }
 
   regist (event = 'ready', exec = () => {}) {
+    debug('Register function to %o event', event)
     this.on(event, (...args) => {
       exec(this, ...args)
     })

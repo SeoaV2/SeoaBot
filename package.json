@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@lavacord/discord.js": "^0.0.7",
+    "debug": "^4.2.0",
     "discord.js": "^12.3.1",
     "i18n": "^0.13.2",
     "knex": "^0.21.5",
