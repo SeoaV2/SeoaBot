@@ -1,12 +1,13 @@
 const path = require('path').resolve()
 const { exec } = require('child_process')
-const { get, post } = require('superagent')
+const { get } = require('superagent')
 
 const start = () => exec('bash -c "' + path + '/utils/lavalink.sh"', console.log)
 
 /**
  * @param {import('lavacord').LavalinkNode} node
  * @param {string} search
+ * @return {string[]} songinfo
  */
 async function getSongs (node, search) {
   const params = new URLSearchParams()
@@ -20,7 +21,8 @@ async function getSongs (node, search) {
 
 /**
  * @param {import('lavacord').LavalinkNode} node
- * @param {string} track
+ * @param {(string|string[])} track or tracks
+ * @return {string[]} track(s)info 
  */
 
 async function getDecode (node, track) {
@@ -29,15 +31,15 @@ async function getDecode (node, track) {
       .set('Authorization', node.password)
       .send(track)
     return (await res).body
-} else {
-  const params = new URLSearchParams()
-  params.append('track', track)
-  const res =
-    await get('http://' + node.host + ':' + node.port + '/decodetrack?' + params)
-      .set('Authorization', node.password)
+  } else {
+    const params = new URLSearchParams()
+    params.append('track', track)
+    const res =
+      await get('http://' + node.host + ':' + node.port + '/decodetrack?' + params)
+        .set('Authorization', node.password)
 
-  return res.body
-}
+    return res.body
+  }
 }
 
 module.exports = { start, getSongs, getDecode }
