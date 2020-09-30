@@ -30,7 +30,7 @@ async function getDecode (node, track) {
     const res = post('http://' + node.host +':'+ node.port + '/decodetracks')
       .set('Authorization', node.password)
       .send(track)
-    return (await res).body
+    return res.body
   } else {
     const params = new URLSearchParams()
     params.append('track', track)

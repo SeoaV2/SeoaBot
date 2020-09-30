@@ -12,7 +12,7 @@ async function fn (client, msg) {
         if(err){
           throw err;
         }
-        if(!data) return msg.channel.send("not data")
+        if (!data) return msg.channel.send("not data")
         const embed = new MessageEmbed({ color: 0xff5ae5 })
         const data1 = await getDecode(client.lavalink.nodes.get('main'), data)
         for (const key of Object.keys(data1)) {

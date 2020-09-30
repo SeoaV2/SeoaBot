@@ -76,8 +76,7 @@
 			"fix": "help.desc.fix",
 			"np": "help.desc.np",
 			"skip": "help.desc.skip",
-			"queue": "help.desc.queue",
-			"q": "help.desc.q"
+			"queue": "help.desc.queue"
 		}
 	}
 }
