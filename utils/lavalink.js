@@ -2,7 +2,7 @@ const path = require('path').resolve()
 const { exec } = require('child_process')
 const { get, post } = require('superagent')
 
-const start = () => exec('bash -c "' + path + '/utils/lavalink.sh"', console.log)
+const start = () => exec('bash -c "' + path + '/scripts/lavalink.sh"', console.log)
 
 /**
  * @param {import('lavacord').LavalinkNode} node

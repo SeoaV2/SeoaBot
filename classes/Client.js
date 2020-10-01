@@ -5,6 +5,7 @@ const lavalinkUtils = require('../utils/lavalink')
 const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
+const redisUtils = require('../utils/redis')
 const knex = require('knex')
 const musicdb  = require('redis').createClient(6379,'127.0.0.1', null)
 const musicEnd = require('../events/musicEnd')
@@ -43,7 +44,9 @@ class eClient extends Client {
     } else throw new Error('./commands/ folder not exists')
 
     lavalinkUtils.start()
-
+    //$ redis-server 
+    // redis server ready & settings
+    
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
     this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
@@ -53,10 +56,6 @@ class eClient extends Client {
         console.log('lavalink connected')
       }, 5000)
     })
-    
-    let player = client.lavalink.players.get(msg.guild.id)
-    if (!player) return
-    musicEnd(Client, player)
 
     this.musicdb = musicdb
     this.musicdb.on('ready', () => console.log("redis ready"))
