@@ -80,15 +80,24 @@
 	"music": {
 		"join": "music.join",
 		"leave": "music.leave",
+		"stop": "music.stop",
 		"volume": {
-			"state": "music.volume.state"
+			"state": "music.volume.state",
+			"toohighorlow": "music.volume.toohighorlow",
+			"set": "music.volume.set"
 		},
 		"global": {
-			"notplaying": "music.global.notplaying"
+			"error": "music.global.error",
+			"nodm": "music.global.nodm",
+			"notplaying": "music.global.notplaying",
+			"nochannel": "music.global.nochannel"
 		},
 		"pause": {
 			"pause": "music.pause.pause",
 			"resume": "music.pause.resume"
+		},
+		"search": {
+			"usage": "music.search.usage"
 		}
 	}
 }
