@@ -7,6 +7,7 @@ const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const knex = require('knex')
 const musicdb  = require('redis').createClient(6379,'127.0.0.1', null)
+const musicEnd = require('../events/musicEnd')
 
 class eClient extends Client {
   constructor () {
@@ -52,6 +53,9 @@ class eClient extends Client {
         console.log('lavalink connected')
       }, 5000)
     })
+    let player = client.lavalink.players.get(msg.guild.id)
+    if (!player) return
+    musicEnd(Client, player)
     this.musicdb = musicdb
     this.musicdb.on('ready', () => console.log("redis ready"))
     this.musicdb.on('connect', () => console.log('redis connect')) 
