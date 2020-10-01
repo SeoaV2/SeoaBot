@@ -7,8 +7,8 @@ create table userdata
 (
 	id varchar(20) not null,
 	locale varchar(5) default 'en-US' not null,
-	denylist varchar(1000) not null,
-	mylist varchar(1000) not null,
+	denylist varchar(20) not null,
+	mylist varchar(200) not null,
 	registedAt TIMESTAMP default CURRENT_TIMESTAMP not null,
 	quizscore int default 0 not null
 );
