@@ -53,12 +53,8 @@ class eClient extends Client {
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
     this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
-    this.on('ready', () => {
-      setTimeout(() => {
-        this.lavalink.connect()
-        console.log('lavalink connected')
-      }, 5000)
-    })
+
+    this.on('ready', () => setTimeout(() => this.lavalink.connect(), 5000))
   }
 
   start (token = this.settings.token) {

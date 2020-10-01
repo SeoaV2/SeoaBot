@@ -30,7 +30,7 @@ async function onMessage (client, msg) {
   const target = client.commands.find(
     (command = { aliases: [] }) =>
       typeof command === 'function' &&
-      command.aliases.includes(query.cmd)
+      (command.aliases || []).includes(query.cmd)
   )
 
   msg.author.locale = userdata.locale

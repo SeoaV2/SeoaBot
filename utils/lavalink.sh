@@ -9,4 +9,10 @@ else
   wget https://github.com/Frederikam/Lavalink/releases/download/$version/Lavalink.jar -O $(pwd)/lavalink/lavalink.jar &2> /dev/null
 fi
 
-java13 -jar $(pwd)/lavalink/lavalink.jar
+if [[ $(ps -a | grep java13) ]]
+then
+  echo lavalink aleady started
+else
+  echo start lavalink
+  java13 -jar $(pwd)/lavalink/lavalink.jar
+fi

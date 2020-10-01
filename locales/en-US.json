@@ -76,5 +76,19 @@
 			"fix": "help.desc.fix",
 			"np": "help.desc.np"
 		}
+	},
+	"music": {
+		"join": "music.join",
+		"leave": "music.leave",
+		"volume": {
+			"state": "music.volume.state"
+		},
+		"global": {
+			"notplaying": "music.global.notplaying"
+		},
+		"pause": {
+			"pause": "music.pause.pause",
+			"resume": "music.pause.resume"
+		}
 	}
 }

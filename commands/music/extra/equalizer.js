@@ -1,5 +1,5 @@
 /**
- * @param {import('../../classes/Client')} client
+ * @param {import('../../../classes/Client')} client
  * @param {import('discord.js').Message} msg
 */
 async function fn (client, msg) {
@@ -17,4 +17,4 @@ async function fn (client, msg) {
 }
 
 module.exports = fn
-module.exports.aliases = ['equalizer']
+// module.exports.aliases = ['equalizer']

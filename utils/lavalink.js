@@ -1,13 +1,13 @@
 const path = require('path').resolve()
 const { exec } = require('child_process')
-const { get } = require('superagent')
+const { get, post } = require('superagent')
 
 const start = () => exec('bash -c "' + path + '/utils/lavalink.sh"', console.log)
 
 /**
  * @param {import('lavacord').LavalinkNode} node
  * @param {string} search
- * @return {string[]} songinfo
+ * @return {string[]}
  */
 async function getSongs (node, search) {
   const params = new URLSearchParams()
@@ -22,12 +22,11 @@ async function getSongs (node, search) {
 /**
  * @param {import('lavacord').LavalinkNode} node
  * @param {(string|string[])} track or tracks
- * @return {string[]} track(s)info 
+ * @return {object|object[]} track(s)info
  */
-
 async function getDecode (node, track) {
   if (Array.isArray(track)) {
-    const res = post('http://' + node.host +':'+ node.port + '/decodetracks')
+    const res = post('http://' + node.host + ':' + node.port + '/decodetracks')
       .set('Authorization', node.password)
       .send(track)
     return (await res).body

@@ -1,10 +1,11 @@
 /**
- * @param {import('../../classes/Client')} client
+ * @param {import('../../../classes/Client')} client
  * @param {import('discord.js').Message} msg
 */
 async function fn (client, msg, locale) {
-  if (!msg.guild) return msg.channel.send('ㅁㄴㅇㄹ')
+  if (!msg.guild) return msg.channel.send(locale('music.global.nodm'))
   await client.lavalink.leave(msg.guild.id)
+  msg.channel.send(locale('music.leave'))
 }
 
 module.exports = fn

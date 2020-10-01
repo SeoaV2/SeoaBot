@@ -11,6 +11,7 @@ async function fn (client, msg, locale) {
   })
 
   for (const command of client.commands) {
+    if (!command.aliases) continue
     const aliases = command.aliases.map((curr) => '`' + client.settings.prefix + curr + '`').join(', ')
     embed.addField(aliases, locale('help.desc.' + command.aliases[0]), true)
   }
