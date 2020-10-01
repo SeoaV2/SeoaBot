@@ -7,7 +7,7 @@ const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const redisUtils = require('../utils/redis')
 const knex = require('knex')
-const musicdb  = require('redis').createClient(6379,'127.0.0.1', null)
+const { createClient:RedisClient, createClient }  = require('redis')
 const musicEnd = require('../events/musicEnd')
 
 class eClient extends Client {
@@ -44,6 +44,7 @@ class eClient extends Client {
     } else throw new Error('./commands/ folder not exists')
 
     lavalinkUtils.start()
+    redisUtils.start()
     //$ redis-server 
     // redis server ready & settings
     
@@ -57,7 +58,7 @@ class eClient extends Client {
       }, 5000)
     })
 
-    this.musicdb = musicdb
+    this.musicdb = new createClient(6379,'127.0.0.1', null)
     this.musicdb.on('ready', () => console.log("redis ready"))
     this.musicdb.on('connect', () => console.log('redis connect')) 
   }
