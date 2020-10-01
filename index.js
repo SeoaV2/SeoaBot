@@ -8,7 +8,7 @@ const musicEnd = require('./events/musicEnd')
 client.start()
 client.regist('ready', onReady)
 client.regist('message', onMessage)
-client.regist('message', () => {
+client.on('message', (msg) => {
     let player = client.lavalink.players.get(msg.guild.id)
     if (!player) return
     musicEnd(Client, player)
