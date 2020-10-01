@@ -45,8 +45,6 @@ class eClient extends Client {
 
     lavalinkUtils.start()
     redisUtils.start()
-    //$ redis-server 
-    // redis server ready & settings
     
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
