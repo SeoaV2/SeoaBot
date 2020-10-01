@@ -8,7 +8,7 @@
 - [x] >help, >도움, >도움말
 - [ ] >m, >music, >뮤직, >음악
 - [ ] >mylist, >재생목록, >마이리스트
-- [ ] >blacklist, >black, >블랙리스트, >블랙
+- [x] >blacklist, >black, >블랙리스트, >블랙 (not testing)
 
 # Develop
 - 카테고리 별로 폴더 
@@ -29,6 +29,7 @@
 | `/utils/`    | 구동을 위한 유틸들 (명령어 카테고리 분류 등) |
 | `/commands/` | 명령어 파일들 |
 | `/locales/`  | i18n 번역파일들 |
-
+| `/scripts/`  | script files |
+| `/tests/`    | test files |
 
 [기타](https://github.com/seoaapp/SeoaBot/issues/68)
