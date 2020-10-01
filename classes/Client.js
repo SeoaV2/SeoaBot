@@ -53,9 +53,11 @@ class eClient extends Client {
         console.log('lavalink connected')
       }, 5000)
     })
+    
     let player = client.lavalink.players.get(msg.guild.id)
     if (!player) return
     musicEnd(Client, player)
+
     this.musicdb = musicdb
     this.musicdb.on('ready', () => console.log("redis ready"))
     this.musicdb.on('connect', () => console.log('redis connect')) 
