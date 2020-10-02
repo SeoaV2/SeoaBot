@@ -1,14 +1,13 @@
 const { resolve: path } = require('path')
 const { Client } = require('discord.js')
 const { existsSync } = require('fs')
-const lavalinkUtils = require('../utils/lavalink')
+const { startLavalink, startMariadb } = require('../utils/shell')
 const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const redisUtils = require('../utils/redis')
 const knex = require('knex')
 const Redis = require('redis')
-const musicEnd = require('../events/musicEnd')
 const debug = require('debug')('seoabot:client')
 
 
@@ -51,8 +50,10 @@ class eClient extends Client {
         })
     } else throw new Error('./commands/ folder not exists')
 
-    lavalinkUtils.start()
+
     redisUtils.start()
+    startMariadb()
+    startLavalink()
 
     debug('Initialize database')
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
