@@ -44,12 +44,12 @@
 	},
 	"settings": {
 		"title": "User Data Set",
-		"desc": "you can set values like `%set <key> <value>`",
+		"desc": "you can set values like `%sset <key> <value>`",
 		"notmodfiable": "oops, you cannot modify `%s`",
 		"done": "Setting `%s` to `%s` is done",
 		"localenotfound": "Locale `%s` is not found",
 		"locales": "Available locales:",
-		"novalue": "Usage: `%set <key> <value>`"
+		"novalue": "Usage: `%sset <key> <value>`"
 	},
 	"help": {
 		"title": "Command Book of %s",
