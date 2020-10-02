@@ -52,7 +52,6 @@
 		"novalue": "Usage: `%sset <key> <value>`"
 	},
 	"help": {
-		"title": "Command Book of %s",
 		"desc": {
 			"botinfo": "**My secrets.**\nshow infomations of this bot (expect token)",
 			"help": "**Can I help you?**\nshow this message",
@@ -61,9 +60,9 @@
 			"leader": "**Now, who is the leader?**\nshow codequiz leaderboard",
 			"quiz": "**What? you're good at programming?**\nplay codequiz",
 			"set": "**i dOnT LikE tHiS SeTting**\nset user preference",
-			"join": "help.desc.join",
-			"leave": "help.desc.leave",
-			"play": "help.desc.play",
+			"join": "join voice channel",
+			"leave": "leave voice channel",
+			"play": "play ",
 			"pause": "help.desc.pause",
 			"resume": "help.desc.resume",
 			"stop": "help.desc.stop",
@@ -75,7 +74,16 @@
 			"search": "help.desc.search",
 			"fix": "help.desc.fix",
 			"np": "help.desc.np"
-		}
+		},
+		"global": {
+			"titles": {
+				"about": "help.global.titles.about",
+				"music": "help.global.titles.music",
+				"quiz": "help.global.titles.quiz"
+			}
+		},
+		"title": "help.title",
+		"notfound": "help.notfound"
 	},
 	"music": {
 		"join": "music.join",

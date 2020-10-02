@@ -24,7 +24,8 @@ else
   then
     echo lavalink aleady started
   else
-    echo start lavalink
-    java13 -jar $(pwd)/lavalink/lavalink.jar
+    echo starting lavalink
+    java13 --illegal-access=deny -jar $(pwd)/lavalink/lavalink.jar &> /dev/null
+    true
   fi
 fi

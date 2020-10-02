@@ -1,8 +1,8 @@
 const path = require('path').resolve()
 const { exec } = require('child_process')
 
-const startLavalink = () => exec('bash -c "' + path + '/utils/lavalink.sh"', log)
-const startMariadb = () => exec('bash -c "' + path + '/utils/mariadb.sh"', log)
+const startLavalink = () => exec('bash -c "' + path + '/scripts/lavalink.sh"', log)
+const startMariadb = () => exec('bash -c "' + path + '/scripts/mariadb.sh"', log)
 
 function log (err, stdout, stderr) {
   if (err) return console.log(err.message)
