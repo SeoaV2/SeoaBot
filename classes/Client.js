@@ -1,4 +1,4 @@
-const { resolve: path } = require('path')
+const path = require('path').resolve()
 const { Client } = require('discord.js')
 const { existsSync } = require('fs')
 const { startLavalink, startMariadb, startRedis } = require('../utils/shell')
@@ -18,7 +18,7 @@ class eClient extends Client {
     this._ = {}
 
     debug('Check the existance of %o', 'config.json')
-    this._settingPath = path() + '/config.json'
+    this._settingPath = path + '/config.json'
     this._settingHas = existsSync(this._settingPath)
 
     if (this._settingHas) {
@@ -34,7 +34,7 @@ class eClient extends Client {
     }
 
     debug('Check the existance of %o folder', 'commands')
-    this._commandsPath = path() + '/commands'
+    this._commandsPath = path + '/commands'
     this._commandsHas = existsSync(this._commandsPath)
 
     if (this._commandsHas) {
@@ -44,7 +44,9 @@ class eClient extends Client {
         .forEach((command) => {
           if (!command.endsWith('.js')) return
 
+          const category = command.replace(this._commandsPath, '').split('/')[1]
           command = require(command)
+          command.category = category
           this.commands.push(command)
         })
     } else throw new Error('./commands/ folder not exists')
@@ -56,7 +58,7 @@ class eClient extends Client {
 
     debug('Initialize database')
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
-    this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
+    this.i18n = new I18n({ objectNotation: true, directory: path + '/locales' })
     this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
     this.musicdb = new Redis.createClient(6379,'127.0.0.1', null)
 

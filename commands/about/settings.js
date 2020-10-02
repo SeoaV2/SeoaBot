@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js')
 const modifiable = ['locale']
 
 /**
- * @param {import('../classes/Client')} client
+ * @param {import('../../classes/Client')} client
  * @param {import('discord.js').Message} msg
 */
 async function fn (client, msg, locale) {

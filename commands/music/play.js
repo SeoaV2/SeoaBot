@@ -11,8 +11,8 @@ async function fn (client, msg, locale) {
   if (!player) player = await client.lavalink.join({ guild: msg.guild.id, channel: msg.member.voice.channel.id, node: 'main' })
   const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'ytsearch:' + msg.query.args.join(' '))).tracks
 
+  console.log(data.track);
   if (data) {
-    console.log(data.track);
     player.play(data.track)
     const embed = new MessageEmbed({ color: 0xff5ae5 })
     //if (client.musicdb.exists('name') == 0)  // 있으면 1 없으면 0
