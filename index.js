@@ -8,7 +8,6 @@ const onMessage = require('./events/onMessage')
 client.start()
 client.regist('ready', onReady)
 client.regist('message', onMessage)
-// idk music end loop (Tmfoem?)
 client.on('message', (msg) => {
     let users = client.db.select('denylist').from('userdata').where('denylist', msg.author.id)
     if (users) return
