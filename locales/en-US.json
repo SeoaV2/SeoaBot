@@ -99,6 +99,17 @@
 		},
 		"search": {
 			"usage": "music.search.usage"
+		},
+		"mylist": {
+			"query": {
+				"notfound": "music.mylist.query.notfound"
+			},
+			"set": {
+				"added": "music.mylist.set.added",
+				"toohighorlow": "music.mylist.set.toohighorlow"
+			},
+			"usage": "music.mylist.usage",
+			"removed": "music.mylist.removed"
 		}
 	}
 }

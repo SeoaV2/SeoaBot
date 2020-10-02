@@ -6,9 +6,9 @@
 - [x] >leader, >leaderboard, >리더보드, >리더, >보드
 - [x] >set, >setting, >설정, >settings 
 - [x] >help, >도움, >도움말
+- [x] >blacklist, >black, >블랙리스트, >블랙
+- [x] >mylist, >재생목록, >마이리스트
 - [ ] >m, >music, >뮤직, >음악
-- [ ] >blacklist, >black, >블랙리스트, >블랙
-- [ ] >mylist, >재생목록, >마이리스트
 
 # Develop
 - 카테고리 별로 폴더 

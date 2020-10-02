@@ -22,7 +22,7 @@ async function fn (client, msg, locale) {
     }).setImage('http://i3.ytimg.com/vi/' + identifier + '/maxresdefault.jpg')
 
     msg.channel.send(embed)
-  } else msg.channel.send(locale('music.global.notplaying'))
+  } else msg.channel.send(locale('music.global.notfound'))
 }
 
 module.exports = fn

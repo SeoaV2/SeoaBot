@@ -100,6 +100,13 @@
 		},
 		"search": {
 			"usage": "music.search.usage"
+		},
+		"mylist": {
+			"set": {
+				"added": "music.mylist.set.added",
+				"toohighorlow": "music.mylist.set.toohighorlow"
+			},
+			"usage": "music.mylist.usage"
 		}
 	}
 }
