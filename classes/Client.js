@@ -64,8 +64,8 @@ class eClient extends Client {
             if (trys === (this.settings.tryLavalink || 10) && !process.env.disableExitOnFail) {
               throw new Error('lavalink connection failed, restart this bot to continue\nuse disableExitOnFail=true to disable this message')
             }
-            debug('Trying connect lavalink %o', trys)
-            this.lavalink.connect()
+            debug('Trying connect lavalink #%o', trys + 1)
+            this.lavalink.connect().catch(() => {}).then((res) => { if (res) debug('Lavalink connected') })
           }
         }, trys * 1000)
       }
