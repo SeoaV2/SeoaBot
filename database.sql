@@ -17,3 +17,16 @@ create unique index userdata_id_uindex
 alter table userdata
 	add constraint userdata_pk
 		primary key (id);
+
+create table blacklist
+(
+	id varchar(20) not null,
+	reason text
+);
+
+create unique index blacklist_id_uindex
+	on blacklist (id);
+
+alter table blacklist
+	add constraint blacklist_pk
+		primary key (id)

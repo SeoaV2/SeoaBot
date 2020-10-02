@@ -9,6 +9,7 @@ async function fn (client, msg, locale) {
 
   for (const command of client.commands) {
     if (!command.aliases) continue
+    if (command.devonly) continue
     const aliases = command.aliases.map((curr) => '`' + client.settings.prefix + curr + '`').join(', ')
     if (typeof commands[command.category] !== 'object') commands[command.category] = []
     commands[command.category].push({

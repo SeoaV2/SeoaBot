@@ -77,6 +77,13 @@
 			"np": "help.desc.np",
 			"skip": "help.desc.skip",
 			"queue": "help.desc.queue"
+		},
+		"global": {
+			"titles": {
+				"about": "help.global.titles.about",
+				"music": "help.global.titles.music",
+				"quiz": "help.global.titles.quiz"
+			}
 		}
 	},
 	"music": {

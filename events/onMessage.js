@@ -13,6 +13,9 @@ async function onMessage (client, msg) {
   if (author.bot) return
   if (!content.startsWith(prefix)) return
 
+  const [blocked] = await client.db.select('*').where('id', author.id).from('blacklist')
+  if (blocked) return msg.channel.send(blocked.reason)
+
   debug('Get locale of user who executed the command')
   let [userdata] = await client.db
     .select('locale')
