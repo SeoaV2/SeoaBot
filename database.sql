@@ -29,4 +29,13 @@ create unique index blacklist_id_uindex
 
 alter table blacklist
 	add constraint blacklist_pk
-		primary key (id)
+		primary key (id);
+
+create table mylist
+(
+	uid varchar(20) not null,
+	track int not null,
+	vid varchar(11) not null,
+	vname text not null,
+	vauthor text not null
+);

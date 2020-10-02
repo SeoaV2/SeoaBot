@@ -12,7 +12,7 @@ async function fn (client, msg) {
   switch (msg.query.args[0]) {
     case 'add': {
       if (!msg.query.args[1] || !msg.query.args[2]) return msg.channel.send(client.settings.prefix + 'blacklist add <userid> <...reason>')
-      await client.db.insert({ id: msg.query.args[1], reason: msg.query.args.slice(2).join(' ') }).into('blacklist').catch(console.log)
+      await client.db.insert({ id: msg.query.args[1], reason: msg.query.args.slice(2).join(' ') }).into('blacklist')
       msg.channel.send('done.')
       break
     }
@@ -39,7 +39,7 @@ async function fn (client, msg) {
 
     case 'modify': {
       if (!msg.query.args[1] || !msg.query.args[2]) return msg.channel.send(client.settings.prefix + 'blacklist modify <userid> <...reason>')
-      await client.db.update('reason', msg.query.args.slice(2).join(' ')).where('id', msg.query.args[1]).from('blacklist').catch(console.log)
+      await client.db.update('reason', msg.query.args.slice(2).join(' ')).where('id', msg.query.args[1]).from('blacklist')
       msg.channel.send('done.')
       break
     }
