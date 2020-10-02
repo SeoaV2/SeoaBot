@@ -3,8 +3,8 @@
  */
 function onReady (client) {
   console.log(
-    client.user.username + ' is now online!\n' +
-    'prefix: ' + client.settings.prefix
+    `${client.user.username} is now online!\n` +
+    `prefix: ${client.settings.prefix}`
   )
 }
 

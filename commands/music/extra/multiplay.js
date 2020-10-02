@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js')
-const { getSongs } = require('../../utils/lavalink')
+const { getSongs } = require('../../../utils/lavalink')
 /**
- * @param {import('../../classes/Client')} client
+ * @param {import('../../../classes/Client')} client
  * @param {import('discord.js').Message} msg
 */
 async function fn (client, msg, locale) {
@@ -25,4 +25,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['multiplay', 'mplay']
+// module.exports.aliases = ['multiplay', 'mplay']

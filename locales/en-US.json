@@ -78,5 +78,28 @@
 			"skip": "help.desc.skip",
 			"queue": "help.desc.queue"
 		}
+	},
+	"music": {
+		"join": "music.join",
+		"leave": "music.leave",
+		"stop": "music.stop",
+		"volume": {
+			"state": "music.volume.state",
+			"toohighorlow": "music.volume.toohighorlow",
+			"set": "music.volume.set"
+		},
+		"global": {
+			"error": "music.global.error",
+			"nodm": "music.global.nodm",
+			"notplaying": "music.global.notplaying",
+			"nochannel": "music.global.nochannel"
+		},
+		"pause": {
+			"pause": "music.pause.pause",
+			"resume": "music.pause.resume"
+		},
+		"search": {
+			"usage": "music.search.usage"
+		}
 	}
 }
