@@ -8,10 +8,3 @@ const onMessage = require('./events/onMessage')
 client.start()
 client.regist('ready', onReady)
 client.regist('message', onMessage)
-client.on('message', (msg) => {
-    let users = client.db.select('denylist').from('userdata').where('denylist', msg.author.id)
-    if (users) return
-  // let player = client.lavalink.players.get(msg.guild.id)
-  //  if (!player) return
-  //  musicEnd(Client, player)
-})

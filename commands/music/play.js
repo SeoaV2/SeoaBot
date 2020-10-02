@@ -12,6 +12,7 @@ async function fn (client, msg, locale) {
   const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'ytsearch:' + msg.query.args.join(' '))).tracks
 
   if (data) {
+    console.log(data.track);
     player.play(data.track)
     const embed = new MessageEmbed({ color: 0xff5ae5 })
     //if (client.musicdb.exists('name') == 0)  // 있으면 1 없으면 0
