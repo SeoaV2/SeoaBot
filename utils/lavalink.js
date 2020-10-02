@@ -1,8 +1,4 @@
-const path = require('path').resolve()
-const { exec } = require('child_process')
 const { get, post } = require('superagent')
-
-const start = () => exec('bash -c "' + path + '/utils/lavalink.sh"', console.log)
 
 /**
  * @param {import('lavacord').LavalinkNode} node
@@ -41,4 +37,4 @@ async function getDecode (node, track) {
   }
 }
 
-module.exports = { start, getSongs, getDecode }
+module.exports = { getSongs, getDecode }
