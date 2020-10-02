@@ -52,31 +52,17 @@ class eClient extends Client {
     } else throw new Error('./commands/ folder not exists')
 
     lavalinkUtils.start()
-<<<<<<< HEAD
     redisUtils.start()
-    
-    this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
-    this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
-    this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
-    this.on('ready', () => {
-      setTimeout(() => {
-        this.lavalink.connect()
-        console.log('lavalink connected')
-      }, 5000)
-    })
-
-    this.musicdb = new Redis.createClient(6379,'127.0.0.1', null)
-    this.musicdb.on('ready', () => console.log("redis ready"))
-    this.musicdb.on('connect', () => console.log('redis connect')) 
-=======
 
     debug('Initialize database')
     this.db = knex({ client: 'mysql', connection: this.settings.database || { user: 'seoafixed', host: 'localhost', database: 'seoafixed' } })
     this.i18n = new I18n({ objectNotation: true, directory: path() + '/locales' })
     this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
+    this.musicdb = new Redis.createClient(6379,'127.0.0.1', null)
 
     this.on('ready', () => setTimeout(() => this.lavalink.connect(), 5000))
->>>>>>> 3c9a566bfebe6f6647d968997ad538d17c1e452c
+    this.musicdb.on('ready', () => console.log("redis ready"))
+    this.musicdb.on('connect', () => console.log('redis connect')) 
   }
 
   start (token = this.settings.token) {
