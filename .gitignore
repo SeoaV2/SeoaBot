@@ -124,11 +124,9 @@ config.json
 # Lavalink
 lavalink/lavalink.jar
 
-<<<<<<< HEAD
 # redis dump
 dump.rdb
-=======
+
 # Vim swap file
 *.swp
 *.swo
->>>>>>> 3c9a566bfebe6f6647d968997ad538d17c1e452c

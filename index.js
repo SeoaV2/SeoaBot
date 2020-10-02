@@ -10,7 +10,7 @@ client.regist('ready', onReady)
 client.regist('message', onMessage)
 // idk music end loop (Tmfoem?)
 client.on('message', (msg) => {
-    let users = client.db.select('id', 'denylist').from('userdata').where('denylist', id)
+    let users = client.db.select('denylist').from('userdata').where('denylist', msg.author.id)
     if (users) return
   // let player = client.lavalink.players.get(msg.guild.id)
   //  if (!player) return
