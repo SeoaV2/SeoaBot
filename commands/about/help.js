@@ -30,7 +30,7 @@ async function fn (client, msg, locale) {
 
     const embed = new MessageEmbed({
       color: 0xff5ae5,
-      title: locale('help.title'),
+      title: locale('help.title', client.user.username),
       fields
     })
     return msg.channel.send(embed)

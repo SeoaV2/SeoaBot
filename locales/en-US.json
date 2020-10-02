@@ -62,61 +62,61 @@
 			"set": "**i dOnT LikE tHiS SeTting**\nset user preference",
 			"join": "join voice channel",
 			"leave": "leave voice channel",
-			"play": "play ",
-			"pause": "help.desc.pause",
-			"resume": "help.desc.resume",
-			"stop": "help.desc.stop",
-			"seek": "help.desc.seek",
-			"volume": "help.desc.volume",
+			"play": "play music",
+			"pause": "pause music",
+			"resume": "resume music",
+			"stop": "stop music",
+			"seek": "select specific position to hear",
+			"volume": "set volume",
 			"equalizer": "help.desc.equalizer",
 			"multiplay": "help.desc.multiplay",
-			"nowplaying": "help.desc.playing",
-			"search": "help.desc.search",
+			"nowplaying": "show playing info",
+			"search": "search videos from youtube",
 			"fix": "help.desc.fix",
-			"np": "help.desc.np"
+			"np": "show playing info"
 		},
 		"global": {
 			"titles": {
-				"about": "help.global.titles.about",
-				"music": "help.global.titles.music",
-				"quiz": "help.global.titles.quiz"
+				"about": "<:__seoa_robot:761575813073731614> Commands about this bot",
+				"music": "<:__seoa_music:761576916930002974> Commands about music player",
+				"quiz": "<:__seoa_code:761577591655890956> Commands about coding quizzes"
 			}
 		},
-		"title": "help.title",
-		"notfound": "help.notfound"
+		"title": "<a:glowingseoa:630402382551056419> %s's Command Book",
+		"notfound": "Sorry, category `%s` is not exist"
 	},
 	"music": {
-		"join": "music.join",
-		"leave": "music.leave",
-		"stop": "music.stop",
+		"join": "<:__seoa_sign_in_alt:761578967516971009> I am in",
+		"leave": "<:__seoa_sign_out_alt:761580165591334913> Have a great time!",
+		"stop": "I stoped, you don't like this song, right?",
 		"volume": {
-			"state": "music.volume.state",
-			"toohighorlow": "music.volume.toohighorlow",
-			"set": "music.volume.set"
+			"state": "<:__seoa_volume_up:761581450611916800> Current volume: `%s%%`",
+			"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high volume (Available range: `1%` ~ `199%`)",
+			"set": "<:__seoa_volume_up:761581450611916800> Set volume: `%s%%`"
 		},
 		"global": {
-			"error": "music.global.error",
-			"nodm": "music.global.nodm",
-			"notplaying": "music.global.notplaying",
-			"nochannel": "music.global.nochannel"
+			"error": "Error has been occurred during operation with Lavalink\nMessage: `%s`",
+			"nodm": "<:__seoa_hand_paper:761581036026069022> Sorry, music operation is limited to server",
+			"notplaying": "<:__seoa_hand_paper:761581036026069022> It is not allowed to play void music (Play queue is empty)",
+			"nochannel": "<:__seoa_hand_paper:761581036026069022> We cannot found where you connected"
 		},
 		"pause": {
-			"pause": "music.pause.pause",
-			"resume": "music.pause.resume"
+			"pause": "<:__seoa_pause:761586957158842427> Paused",
+			"resume": "<:__seoa_play:761587394465497098> Continue"
 		},
 		"search": {
-			"usage": "music.search.usage"
+			"usage": "`%ssearch [keyword/link]` to search youtube videos"
 		},
 		"mylist": {
 			"query": {
-				"notfound": "music.mylist.query.notfound"
+				"notfound": "Sorry, not found"
 			},
 			"set": {
-				"added": "music.mylist.set.added",
-				"toohighorlow": "music.mylist.set.toohighorlow"
+				"added": "Added track #%s: ",
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high track number (Available range: `1` ~ `20`)"
 			},
-			"usage": "music.mylist.usage",
-			"removed": "music.mylist.removed"
+			"usage": "`%smylist query [track number]`: Show your list entries\n`%smylist set <track number> <keyword/link>`: Add or update your list\n`%smylist play <track number>`: Play specific track\n`%smylist remove <track number>`: Remove track in your list",
+			"removed": "Removed track #%s"
 		}
 	}
 }

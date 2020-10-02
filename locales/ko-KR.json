@@ -3,18 +3,18 @@
 		"greeting": "Seoa봇 사용을 환영합니다!\n시작하기 전에 몇가지 정보를 수집해도 될까요...?\n\n다음의 유저 정보가 수집됩니다:\n- 유저 ID",
 		"ping": {
 			"status": "API 지연 시간: %sms\n메세지 이벤트: %sms",
-			"success": "ping 테스트 결과",
-			"testing": "ping 테스트 진행 중..."
+			"success": "Ping 테스트 결과",
+			"testing": "Ping 테스트 진행 중..."
 		},
-		"invite": "봇 초대!",
+		"invite": " 여기를 눌러 봇을 초대하세요",
 		"info": {
 			"title": "%s의 정보",
 			"keys": {
 				"tag": "디스코드 태그",
-				"commands": "명령어들",
-				"users": "유저들",
-				"channels": "채널들",
-				"guilds": "서버들",
+				"commands": "명령어 수",
+				"users": "유저 수",
+				"channels": "채널 수",
+				"guilds": "서버 수",
 				"uptime": "업타임"
 			},
 			"values": {
@@ -28,92 +28,96 @@
 	},
 	"quiz": {
 		"play": {
-			"title": "%s이(가) 푸는 중...",
-			"descript": "[`Quiz 요청, 보고`](%s)",
-			"qtitle": "Q%d. 에 대한 %s",
-			"notfound": "퀴즈를 찾을 수 없음 #%d",
+			"title": "%s님이 푸는 중...",
+			"descript": "[`Quiz 문의, 추가 요청`](%s)",
+			"qtitle": "Q%d. %s의 대한 문제",
+			"notfound": "퀴즈 %d번을 찾을 수 없음",
 			"wrong": "오답입니다 :(",
-			"correct": "정답입니다! %d점을 획득하셨습니다."
+			"correct": "정답입니다! %d점을 획득하셨습니다"
 		},
 		"leaderboard": {
-			"title": "**codequiz 상위 10개 플레이어:**",
+			"title": "**codequiz Top 10 플레이어:**",
 			"real": "%s (%s), %d 점",
 			"hidden": "<알 수 없는 플레이어> (%s), %d 점",
-			"footer": "%d점, %s점인 것 같습니다"
+			"footer": "내 점수: `%d점`(%s등)"
 		}
 	},
 	"settings": {
-		"title": "사용자 데이터 세팅",
-		"desc": "%sset <key><value>으로 값을 설정할 수 있습니다.",
-		"notmodfiable": "`%s`은(는) 수정할 수 없습니다.",
-		"done": "%s에서 %s로 설정 완료되었습니다.",
-		"localenotfound": "%s 로케일을 찾을 수 없습니다.",
-		"locales": "사용 가능한 로케일:",
-		"novalue": "사용법: `%sset <key> <value>`"
+		"title": "사용자 설정",
+		"desc": "%sset <키> <값>으로 값을 설정할 수 있습니다",
+		"notmodfiable": "`%s` 값은 수정할 수 없습니다",
+		"done": "`%s`를 `%s`로 설정했습니다",
+		"localenotfound": "`%s`는 유효한 언어가 아닙니다",
+		"locales": "사용 가능한 언어:",
+		"novalue": "사용법: `%sset <키> <값>`"
 	},
 	"help": {
-		"title": "%의 명령어 책",
 		"desc": {
-			"botinfo": "**My secrets.**\n 이 봇의 정보 표시합니다 (토큰 제외)",
-			"help": "**Can I help you?**\n 이 메시지 표시합니다",
-			"invite": "**You and me, now**\n이 봇의 초대 링크 표시합니다",
-			"ping": "**Ping! Pong with ttakkku**\n메시지 지연 시간을 보여줍니다",
-			"leader": "**Now, who is the leader?**\ncodequiz 리더보드를 보여줍니다",
-			"quiz": "**What? you're good at programming?**\ncodequiz을 합시다",
-			"set": "**i dOnT LikE tHiS SeTting**\n사용자 설정을 합니다",
-			"join": "help.desc.join",
-			"leave": "help.desc.leave",
-			"play": "help.desc.play",
-			"pause": "help.desc.pause",
-			"resume": "help.desc.resume",
-			"stop": "help.desc.stop",
-			"seek": "help.desc.seek",
-			"volume": "help.desc.volume",
+			"botinfo": "봇 정보를 표시합니다",
+			"help": "이 메시지를 표시합니다",
+			"invite": "봇 초대 링크입니다",
+			"ping": "메시지 지연 시간을 보여줍니다",
+			"leader": "codequiz 리더보드를 보여줍니다",
+			"quiz": "codequiz를 플레이 합니다",
+			"set": "사용자 설정을 합니다",
+			"join": "보이스 채널에 들어갑니다",
+			"leave": "보이스 채널에 나갑니다",
+			"play": "음악을 재생합니다",
+			"pause": "음악을 일시정지합니다",
+			"resume": "음악을 다시 재생합니다",
+			"stop": "음악을 끕니다",
+			"seek": "재생 위치를 설정합니다",
+			"volume": "볼륨을 설정합니다",
 			"equalizer": "help.desc.equalizer",
 			"multiplay": "help.desc.multiplay",
-			"nowplaying": "help.desc.playing",
-			"search": "help.desc.search",
+			"nowplaying": "플레이 중인 노래의 정보를 보여줍니다",
+			"search": "유튜브에서 영상들을 검색합니다",
 			"fix": "help.desc.fix",
-			"np": "help.desc.np",
-			"skip": "help.desc.skip",
-			"queue": "help.desc.queue"
+			"np": "플레이 중인 노래의 정보를 보여줍니다"
 		},
 		"global": {
 			"titles": {
-				"about": "help.global.titles.about",
-				"music": "help.global.titles.music",
-				"quiz": "help.global.titles.quiz"
+				"about": "<:__seoa_robot:761575813073731614> 봇에 대한 명령어들입니다",
+				"music": "<:__seoa_music:761576916930002974> 뮤직 플레이어에 대한 명령어들입니다",
+				"quiz": "<:__seoa_code:761577591655890956> 코딩 퀴즈에 대한 명령어들입니다"
 			}
-		}
+		},
+		"title": "<a:glowingseoa:630402382551056419> %의 커멘드 북",
+		"notfound": "죄송합니다, `%s` 카데고리는 없습니다"
+		
 	},
 	"music": {
-		"join": "music.join",
-		"leave": "music.leave",
-		"stop": "music.stop",
+		"join": "<:__seoa_sign_in_alt:761578967516971009> 저 들어갑니다~",
+		"leave": "<:__seoa_sign_out_alt:761580165591334913> 신사 숙녀 여러분, 좋은 시간 보내길",
+		"stop": "노래를 멈췄습니다. 근데 이 노래를 별로 좋아하시지 않는 거 같군요, 맞죠?",
 		"volume": {
-			"state": "music.volume.state",
-			"toohighorlow": "music.volume.toohighorlow",
-			"set": "music.volume.set"
+			"state": "<:__seoa_volume_up:761581450611916800> 현재 불륨: `%s%%`",
+			"toohighorlow": "<:__seoa_hand_paper:761581036026069022> 너~무 낮거나 너~무 높습니다. (가능한 범위: `1%` ~ `100%`)",
+			"set": "<:__seoa_volume_up:761581450611916800> 불륨을 `%s%%`으로 설정했습니다."
 		},
 		"global": {
-			"error": "music.global.error",
-			"nodm": "music.global.nodm",
-			"notplaying": "music.global.notplaying",
-			"nochannel": "music.global.nochannel"
+			"error": "Lavalink가 작동하는 동안 오류가 발생했습니다.\n 오류 메세지: `%s`",
+			"nodm": "<:__seoa_hand_paper:761581036026069022> 죄송합니다, 음악 재생은 서버에서만 가능합니다",
+			"notplaying": "<:__seoa_hand_paper:761581036026069022> 빈 음악을 재생할 수 없습니다 (재생중인 음악이 없습니다)",
+			"nochannel": "<:__seoa_hand_paper:761581036026069022> 연결된 채널을 찾을 수 없습니다"
 		},
 		"pause": {
-			"pause": "music.pause.pause",
-			"resume": "music.pause.resume"
+			"pause": "<:__seoa_pause:761586957158842427> 음악을 일시정지 했습니다",
+			"resume": "<:__seoa_play:761587394465497098> 음악을 다시 재생합니다"
 		},
 		"search": {
-			"usage": "music.search.usage"
+			"usage": "%ssearch [키워드/링크]`로 유튜브 영상을 검색합니다"
 		},
 		"mylist": {
-			"set": {
-				"added": "music.mylist.set.added",
-				"toohighorlow": "music.mylist.set.toohighorlow"
+			"query": {
+				"notfound": "죄송합니다, 리스트가 비었거나 찾으시는 트랙이 없습니다"
 			},
-			"usage": "music.mylist.usage"
+			"set": {
+				"added": "트랙 #%s 추가됨: ",
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> 트랙번호는 `1`에서 `20`까지 가능합니다"
+			},
+			"usage": "`%mylist query [트랙 번호]`: 마이리스트 목록을 보여줍니다\n`%smylist set <트랙 번호> <키워드/링크>`: 마이리스트에 트랙을 추가하거나 변경합니다\n`%smylist play <트랙 번호>`: 특정 트랙을 플레이합니다\n`%smylist remove <트랙 번호>`: 당신의 리스트에서 트랙을 제거합니다",
+			"removed": "#%s번 트랙을 제거 하였습니다"
 		}
 	}
 }

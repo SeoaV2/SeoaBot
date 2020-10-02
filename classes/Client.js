@@ -58,9 +58,12 @@ class eClient extends Client {
     this.lavalink = new Lavalink(this, [{ id: 'main', host: 'localhost', port: 2333, password: 'passwd' }])
 
     this.on('ready', () => {
-      for (let trys = 0; trys < (this.settings.tryLavalink || 10); trys++) {
+      for (let trys = 0; trys < (this.settings.tryLavalink + 1 || 11); trys++) {
         setTimeout(() => {
           if (!this.lavalink.nodes.get('main').connected) {
+            if (trys === (this.settings.tryLavalink || 10) && !process.env.disableExitOnFail) {
+              throw new Error('lavalink connection failed, restart this bot to continue\nuse disableExitOnFail=true to disable this message')
+            }
             debug('Trying connect lavalink %o', trys)
             this.lavalink.connect()
           }

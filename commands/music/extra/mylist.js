@@ -107,7 +107,7 @@ async function fn (client, msg, locale) {
     case 'remove': {
       if (!msg.query.args[1]) return msg.channel.send(locale('music.mylist.remove.usage', client.settings.prefix))
       await client.db.delete().where('uid', msg.author.id).andWhere('track', msg.query.args[1]).from('mylist')
-      msg.channel.send(locale('music.mylist.removed'))
+      msg.channel.send(locale('music.mylist.removed', msg.query.args[1]))
       break
     }
 
