@@ -122,3 +122,6 @@ package-lock.json
 config.json
 
 lavalink/lavalink.jar
+
+# redis dump
+dump.rdb

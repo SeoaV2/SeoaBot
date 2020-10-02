@@ -3,7 +3,7 @@ const client = new Client()
 
 const onReady = require('./events/onReady')
 const onMessage = require('./events/onMessage')
-const musicEnd = require('./events/musicEnd')
+//const musicEnd = require('./events/musicEnd')
 
 client.start()
 client.regist('ready', onReady)

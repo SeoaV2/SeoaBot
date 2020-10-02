@@ -7,7 +7,7 @@ const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
 const redisUtils = require('../utils/redis')
 const knex = require('knex')
-const { createClient:RedisClient, createClient }  = require('redis')
+const Redis = require('redis')
 const musicEnd = require('../events/musicEnd')
 
 class eClient extends Client {
@@ -56,7 +56,7 @@ class eClient extends Client {
       }, 5000)
     })
 
-    this.musicdb = new createClient(6379,'127.0.0.1', null)
+    this.musicdb = new Redis.createClient(6379,'127.0.0.1', null)
     this.musicdb.on('ready', () => console.log("redis ready"))
     this.musicdb.on('connect', () => console.log('redis connect')) 
   }

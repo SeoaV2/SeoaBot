@@ -1,4 +1,3 @@
-const Knex = require('knex')
 
 /**
  * @param {import('../../classes/Client')} client
