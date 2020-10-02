@@ -1,11 +1,10 @@
 const { resolve: path } = require('path')
 const { Client } = require('discord.js')
 const { existsSync } = require('fs')
-const { startLavalink, startMariadb } = require('../utils/shell')
+const { startLavalink, startMariadb, startRedis } = require('../utils/shell')
 const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
-const redisUtils = require('../utils/redis')
 const knex = require('knex')
 const Redis = require('redis')
 const debug = require('debug')('seoabot:client')
@@ -51,7 +50,7 @@ class eClient extends Client {
     } else throw new Error('./commands/ folder not exists')
 
 
-    redisUtils.start()
+    startRedis()
     startMariadb()
     startLavalink()
 
