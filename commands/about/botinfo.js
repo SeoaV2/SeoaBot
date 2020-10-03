@@ -27,7 +27,7 @@ async function fn (client, msg, locale) {
  * @param {string} keyword
  */
 async function getSize (client, keyword) {
-  return !client.shard ? client[keyword].cache.size : (await client.shard.fetchClientValues('users.cache.' + keyword)).reduce((acc, cur) => acc + cur, 0)
+  return !client.shard ? client[keyword].cache.size : (await client.shard.fetchClientValues(keyword + '.cache.size')).reduce((acc, cur) => acc + cur, 0)
 }
 
 module.exports = fn
