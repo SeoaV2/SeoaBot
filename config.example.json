@@ -1,4 +1,8 @@
 {
   "token": "",
-  "prefix": ">"
+  "prefix": ">",
+  "settings": {
+    "useMusicFeature": true,
+    "tryLavalink": 10
+  }
 }
