@@ -101,12 +101,15 @@
 			"nochannel": "<:__seoa_hand_paper:761581036026069022> We cannot found where you connected",
 			"notfound": "Did not find video: `%s`"
 		},
+		"play": {
+			"usage": "`%splay <keyword/link>` to play youtube videos"
+		},
 		"pause": {
 			"pause": "<:__seoa_pause:761586957158842427> Paused",
 			"resume": "<:__seoa_play:761587394465497098> Continue"
 		},
 		"search": {
-			"usage": "`%ssearch [keyword/link]` to search youtube videos"
+			"usage": "`%ssearch <keyword/link>` to search youtube videos"
 		},
 		"mylist": {
 			"query": {
