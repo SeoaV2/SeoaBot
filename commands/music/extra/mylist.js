@@ -47,6 +47,7 @@ async function fn (client, msg, locale) {
 
     case 'l':
     case 'q':
+    case 'ls':
     case 'list':
     case 'query': {
       // 사용자 트랙 뽑아서 트랙 번호대로 정렬
@@ -103,6 +104,8 @@ async function fn (client, msg, locale) {
 
     case 'r':
     case 'd':
+    case 'rm':
+    case 'del':
     case 'delete':
     case 'remove': {
       if (!msg.query.args[1]) return msg.channel.send(locale('music.mylist.remove.usage', client.settings.prefix))
