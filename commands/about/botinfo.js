@@ -12,14 +12,22 @@ async function fn (client, msg, locale) {
     color: 0xff5ae5,
     fields: [
       { name: locale('about.info.keys.tag'),      value: client.user.tag,                     inline: true },
-      { name: locale('about.info.keys.commands'), value: locale('about.info.values.commands', client.commands.length),     inline: true },
-      { name: locale('about.info.keys.users'),    value: locale('about.info.values.users',    client.users.cache.size),    inline: true },
-      { name: locale('about.info.keys.channels'), value: locale('about.info.values.channels', client.channels.cache.size), inline: true },
-      { name: locale('about.info.keys.guilds'),   value: locale('about.info.values.guilds',   client.guilds.cache.size),   inline: true },
-      { name: locale('about.info.keys.uptime'),   value: locale('about.info.values.uptime',   client.uptime),              inline: true }
+      { name: locale('about.info.keys.commands'), value: locale('about.info.values.commands', client.commands.length),            inline: true },
+      { name: locale('about.info.keys.users'),    value: locale('about.info.values.users',    await getSize(client, 'users')),    inline: true },
+      { name: locale('about.info.keys.channels'), value: locale('about.info.values.channels', await getSize(client, 'channels')), inline: true },
+      { name: locale('about.info.keys.guilds'),   value: locale('about.info.values.guilds',   await getSize(client, 'guilds')),   inline: true },
+      { name: locale('about.info.keys.uptime'),   value: locale('about.info.values.uptime',   client.uptime), inline: true }
     ]
   }).setThumbnail(client.user.avatarURL())
   msg.channel.send(embed)
+}
+
+/**
+  * @param {import('../../classes/Client')} client
+ * @param {string} keyword
+ */
+async function getSize (client, keyword) {
+  return !client.shard ? client[keyword].cache.size : (await client.shard.fetchClientValues('users.cache.' + keyword)).reduce((acc, cur) => acc + cur, 0)
 }
 
 module.exports = fn

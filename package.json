@@ -26,6 +26,7 @@
     "superagent": "^6.1.0"
   },
   "scripts": {
-    "start": "DEBUG=seoabot:* nodemon"
+    "start": "node utils/shard.js",
+    "test": "DEBUG=seoabot:* nodemon"
   }
 }

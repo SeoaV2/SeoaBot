@@ -11,9 +11,7 @@ const debug = require('debug')('seoabot:client')
 class eClient extends Client {
   constructor () {
     debug('Starting up')
-
     super()
-    this._ = {}
 
     debug('Check the existance of %o', 'config.json')
     this._settingPath = path + '/config.json'
@@ -29,7 +27,7 @@ class eClient extends Client {
 
       if (!token) throw new Error('Token not provided')
       this.settings = { token, prefix, ...settings }
-    }
+    } else throw new Error('./config.json file not exists')
 
     debug('Check the existance of %o folder', 'commands')
     this._commandsPath = path + '/commands'
