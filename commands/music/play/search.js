@@ -6,7 +6,7 @@ const { getSongs } = require('../../../utils/lavalink')
  * @param {import('discord.js').Message} msg
 */
 async function fn (client, msg, locale) {
-  if (!msg.query.args.join(' ')) msg.channel.send(locale('music.search.usage', client.settings.prefix))
+  if (!msg.query.args.join(' ')) return msg.channel.send(locale('music.search.usage', client.settings.prefix))
   const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'ytsearch:' + msg.query.args.join(' '))).tracks
 
   if (data) {
