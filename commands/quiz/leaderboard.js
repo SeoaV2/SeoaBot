@@ -10,7 +10,7 @@ async function fn (client, msg, locale) {
   const sorted = users.sort((a, b) => a.quizscore - b.quizscore)
   for (const user of sorted) {
     const index = sorted.indexOf(user) + 1
-    const realuser = client.users.cache.get(user.id)
+    const realuser = !client.shard ? client.users.cache.get(user.id) : (await client.shard.fetchClientValues('users.cache')).flat().find((v) => v.id === user.id)
     str += getNumberWithOrdinal(index) + '. ' +
       (realuser
         ? locale('quiz.leaderboard.real', realuser.tag, user.id, user.quizscore)
