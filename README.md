@@ -19,11 +19,11 @@
 - bash
 - node (v12 or higher)
 - npm or yarn
+- mysql or mariadb
 - [**Java**](#Java설치)
-- [**Mariadb**](#Mariadb다운로드)
   
 ## Java설치
-> `disableExitOnFail=true`를 환경변수에 추가하여 음악기능을 비활성하고 이 과정을 스킵할 수 있습니다
+> 설정 파일에서 음악기능을 비활성하고 이 과정을 스킵할 수 있습니다
 
 이 봇에 사용되는 [lavalink](https://github.com/Frederikam/Lavalink)를 [구동](scripts/lavalink.sh)하기 위하여\
 심볼릭 링크된 OpenJDK 13이 필요합니다
@@ -37,9 +37,11 @@ sudo ln --symbolic /path/to/downloaded/jdk-13.0.2/bin/java /usr/bin/java13
 ```
 로 심볼릭 링크를 생성합니다
 
-## Mariadb다운로드
-[이곳](https://downloads.mariadb.org/mariadb/10.5.5/)에서 받아서 다운로드를 합니다
-
+## DB 설치
+SQL Shell에 관리자 계정으로 로그인 한뒤 [database.sql](database.sql)을 실행합니다
+```sql
+source database.sql
+```
 
 ## 구성요소 다운로드
 - `npm i` 혹은 `yarn` 을 입력하여 npm 패키지를 받습니다
