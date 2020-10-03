@@ -91,7 +91,7 @@
 		"stop": "I stoped, you don't like this song, right?",
 		"volume": {
 			"state": "<:__seoa_volume_up:761581450611916800> Current volume: `%s%%`",
-			"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high volume (Available range: `1%` ~ `199%`)",
+			"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high volume (Available range: `1%` ~ `199%`, Integer)",
 			"set": "<:__seoa_volume_up:761581450611916800> Set volume: `%s%%`"
 		},
 		"global": {
