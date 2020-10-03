@@ -19,7 +19,7 @@
 - [x] db 는 뭘로? mariadb
 - [x] **오픈소스**
 - [x] `git pull` exec command
-- [ ] 샤드
+- [x] 샤드
 
 # Folder
 | 경로 | 설명  |
