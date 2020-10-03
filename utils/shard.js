@@ -15,6 +15,6 @@ if (this._settingHas) {
 
   const shard = new ShardingManager(path + '/index.js', { token, autoSpawn: true })
 
-  shard.spawn(2)
+  shard.spawn('auto')
   shard.on('shardCreate', (s) => debug('End of starting shard #%o', s.id))
 } else throw new Error('./config.json file not exists')
