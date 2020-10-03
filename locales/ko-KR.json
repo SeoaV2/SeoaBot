@@ -30,7 +30,7 @@
 		"play": {
 			"title": "%s님이 푸는 중...",
 			"descript": "[`Quiz 문의, 추가 요청`](%s)",
-			"qtitle": "Q%d. %s의 대한 문제",
+			"qtitle": "Q%d. %s에 대한 문제",
 			"notfound": "퀴즈 %d번을 찾을 수 없음",
 			"wrong": "오답입니다 :(",
 			"correct": "정답입니다! %d점을 획득하셨습니다"
