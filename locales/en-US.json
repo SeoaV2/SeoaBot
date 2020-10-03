@@ -39,7 +39,7 @@
 			"title": "**Top 10 players of codequiz:**",
 			"real": "%s (%s), %d points",
 			"hidden": "<Unknown player> (%s), %d points",
-			"footer": "you have `%d point(s)`, i think you're `%s`"
+			"footer": "you have `%d point(s)`, i think you're `%s%s`"
 		}
 	},
 	"settings": {
