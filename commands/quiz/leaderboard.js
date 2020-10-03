@@ -6,10 +6,9 @@ const { getNumberWithOrdinal } = require('../../utils/numbering')
 */
 async function fn (client, msg, locale) {
   let str = locale('quiz.leaderboard.title') + '```fix\n'
-  const users = await client.db.select('id', 'quizscore').from('userdata').where('quizscore', '>', '0')
-  const sorted = users.sort((a, b) => a.quizscore - b.quizscore)
-  for (const user of sorted) {
-    const index = sorted.indexOf(user) + 1
+  const users = await client.db.select('id', 'quizscore').from('userdata').where('quizscore', '>', '0').orderBy('quizscore', 'desc')
+  for (const user of users) {
+    const index = users.indexOf(user) + 1
     const realuser = !client.shard ? client.users.cache.get(user.id) : (await client.shard.fetchClientValues('users.cache')).flat().find((v) => v.id === user.id)
     str += getNumberWithOrdinal(index) + '. ' +
       (realuser
@@ -18,8 +17,8 @@ async function fn (client, msg, locale) {
     if (index > 9) break
   }
 
-  const author = sorted.findIndex((v) => v.id === msg.author.id)
-  str += '```' + (author < 0 ? '' : locale('quiz.leaderboard.footer', sorted[author].quizscore, getNumberWithOrdinal(author + 1)))
+  const author = users.findIndex((v) => v.id === msg.author.id)
+  str += '```' + (author < 0 ? '' : locale('quiz.leaderboard.footer', users[author].quizscore, getNumberWithOrdinal(author + 1)))
   msg.channel.send(str)
 }
 
