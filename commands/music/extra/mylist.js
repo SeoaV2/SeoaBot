@@ -41,7 +41,7 @@ async function fn (client, msg, locale) {
         }).setImage('http://i3.ytimg.com/vi/' + vid + '/maxresdefault.jpg')
 
         msg.channel.send(embed)
-      } else msg.channel.send(locale('music.global.notfound'))
+      } else msg.channel.send(locale('music.global.notfound', msg.query.args.slice(2).join(' ')))
       break
     }
 
