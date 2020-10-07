@@ -16,16 +16,6 @@ async function onMessage (client, msg) {
   const [blocked] = await client.db.select('*').where('id', author.id).from('blacklist')
   if (blocked) return msg.channel.send(blocked.reason)
 
-  debug('Get locale of user who executed the command')
-  let [userdata] = await client.db
-    .select('locale')
-    .where('id', msg.author.id)
-    .from('userdata')
-  if (!userdata) {
-    await registUser(client, msg)
-    userdata = { locale: 'en-US' }
-  }
-
   debug('Analyze message')
   const query = new Query(prefix, content)
 
@@ -36,6 +26,17 @@ async function onMessage (client, msg) {
       (command.aliases || []).includes(query.cmd)
   )
 
+  if (!target) return
+  debug('Get locale of user who executed the command')
+  let [userdata] = await client.db
+    .select('locale')
+    .where('id', msg.author.id)
+    .from('userdata')
+  if (!userdata) {
+    await registUser(client, msg)
+    userdata = { locale: 'en-US' }
+  }
+
   msg.author.locale = userdata.locale
   msg.query = query
 
@@ -43,7 +44,6 @@ async function onMessage (client, msg) {
     client.i18n.__({ phrase, locale: msg.author.locale }, ...args)
 
   debug('Run the command')
-  if (!target) return
   target(client, msg, locale)
 }
 
