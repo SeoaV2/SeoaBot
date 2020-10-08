@@ -39,3 +39,13 @@ create table mylist
 	vname text not null,
 	vauthor text not null
 );
+
+
+create table queue
+(
+	oid bigint unsigned not null,
+	gid varchar(20) not null,
+	vid varchar(11) not null,
+	vname text not null,
+	vauthor text not null
+)

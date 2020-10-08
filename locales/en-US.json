@@ -102,7 +102,7 @@
 			"notfound": "Did not find video: `%s`"
 		},
 		"play": {
-			"usage": "`%splay <keyword/link>` to play youtube videos"
+			"usage": "`%splay <keyword/link>` to play youtube videos (if you want to resume paused music, use `%1$sresume`)"
 		},
 		"pause": {
 			"pause": "<:__seoa_pause:761586957158842427> Paused",

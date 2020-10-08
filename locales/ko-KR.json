@@ -121,6 +121,10 @@
 		},
 		"play": {
 			"usage": "`%splay [키워드/링크]`로 유튜브 영상을 재생합니다"
+		},
+		"queue": {
+			"title": "%s 대기열",
+			"nowplaying": "music.queue.nowplaying"
 		}
 	}
 }

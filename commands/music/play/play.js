@@ -15,8 +15,33 @@ async function fn (client, msg, locale) {
   const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'ytsearch:' + msg.query.args.join(' '))).tracks
 
   if (data) {
-    player.play(data.track)
     const { title, author, identifier } = data.info
+    const { oid: prevOid } = ((await client.db.select('oid').where('gid', msg.guild.id).orderBy('oid', 'desc').limit(1).from('queue'))[0] || { oid: -1 })
+
+    if (!player.playing) {
+      await client.db.delete().where('gid', msg.guild.id).from('queue')
+      player.removeAllListeners('end')
+
+      player.play(data.track)
+      player.addListener('end', async () => {
+        await client.db.raw('delete from seoafixed.queue where gid=\'' + msg.guild.id + '\' order by oid limit 1;')
+        const [next] = await client.db.select('*').limit(1).where('gid', msg.guild.id).orderBy('oid').from('queue')
+        if (!next) return await client.lavalink.leave(msg.guild.id)
+        const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'https://www.youtube.com/watch?v=' + next.vid)).tracks
+        if (!data) return
+        player.play(data.track)
+        const embed = new MessageEmbed({
+          color: 0xff5ae5,
+          title: next.vname.length > 30 ? next.vname.substring(0, 30) + '...' : next.vname,
+          description: 'by ' + next.vauthor
+        }).setImage('http://i3.ytimg.com/vi/' + next.vid + '/maxresdefault.jpg')
+
+        msg.channel.send(embed)
+      })
+    }
+
+    await client.db.insert({ oid: prevOid + 1, gid: msg.guild.id, vid: identifier, vname: title, vauthor: author }).into('queue')
+
     const embed = new MessageEmbed({
       color: 0xff5ae5,
       title: title.length > 30 ? title.substring(0, 30) + '...' : title,
