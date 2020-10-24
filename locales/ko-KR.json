@@ -73,7 +73,9 @@
 			"nowplaying": "플레이 중인 노래의 정보를 보여줍니다",
 			"search": "유튜브에서 영상들을 검색합니다",
 			"fix": "help.desc.fix",
-			"np": "플레이 중인 노래의 정보를 보여줍니다"
+			"np": "플레이 중인 노래의 정보를 보여줍니다",
+			"queue": "대기열 목록을 보여줍니다",
+			"skip": "다음 곡으로 스킵합니다"
 		},
 		"global": {
 			"titles": {
@@ -124,7 +126,7 @@
 		},
 		"queue": {
 			"title": "%s 대기열",
-			"nowplaying": "music.queue.nowplaying"
+			"nowplaying": "지금 플레이중"
 		}
 	}
 }

@@ -73,7 +73,9 @@
 			"nowplaying": "show playing info",
 			"search": "search videos from youtube",
 			"fix": "help.desc.fix",
-			"np": "show playing info"
+			"np": "show playing info",
+			"queue": "show queue list",
+			"skip": "skip to next song"
 		},
 		"global": {
 			"titles": {
@@ -101,9 +103,6 @@
 			"nochannel": "<:__seoa_hand_paper:761581036026069022> We cannot found where you connected",
 			"notfound": "Did not find video: `%s`"
 		},
-		"play": {
-			"usage": "`%splay <keyword/link>` to play youtube videos (if you want to resume paused music, use `%1$sresume`)"
-		},
 		"pause": {
 			"pause": "<:__seoa_pause:761586957158842427> Paused",
 			"resume": "<:__seoa_play:761587394465497098> Continue"
@@ -121,6 +120,13 @@
 			},
 			"usage": "`%1$smylist query [track number]`: Show your list entries\n`%1$smylist set <track number> <keyword/link>`: Add or update your list\n`%1$smylist play <track number>`: Play specific track\n`%1$smylist remove <track number>`: Remove track in your list",
 			"removed": "Removed track #%s"
+		},
+		"play": {
+			"usage": "`%splay <keyword/link>` to play youtube videos (if you want to resume paused music, use `%1$sresume`)"
+		},
+		"queue": {
+			"title": "queue of %s",
+			"nowplaying": "now playing"
 		}
 	}
 }
