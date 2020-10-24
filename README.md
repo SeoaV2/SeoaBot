@@ -52,4 +52,4 @@ source database.sql
 
 ## 실행
 배포 모드: `npm start` 혹은 `yarn start`\
-개발 모드: `npm test` 혹은 `yarn test`
+개발 모드: `npm run dev` 혹은 `yarn dev`

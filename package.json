@@ -27,6 +27,6 @@
   },
   "scripts": {
     "start": "node utils/shard.js",
-    "test": "DEBUG=seoabot:* nodemon"
+    "dev": "DEBUG=seoabot:* nodemon"
   }
 }

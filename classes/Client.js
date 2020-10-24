@@ -1,7 +1,6 @@
 const path = require('path').resolve()
 const { Client } = require('discord.js')
 const { existsSync } = require('fs')
-const { startLavalink, startMariadb } = require('../utils/shell')
 const { Manager: Lavalink } = require('@lavacord/discord.js')
 const { readRecursively } = require('../utils/readFiles')
 const { I18n } = require('i18n')
@@ -55,9 +54,6 @@ class eClient extends Client {
           this.commands.push(command)
         })
     } else throw new Error('./commands/ folder not exists')
-
-    startMariadb()
-    startLavalink()
 
     debug('Initialize database')
     this.db = knex({
