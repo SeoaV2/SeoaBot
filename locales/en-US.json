@@ -111,6 +111,9 @@
 			"usage": "`%ssearch <keyword/link>` to search youtube videos"
 		},
 		"mylist": {
+			"play": {
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high track number (Available range: `1` ~ `20`)"
+			},
 			"query": {
 				"notfound": "Sorry, not found"
 			},
