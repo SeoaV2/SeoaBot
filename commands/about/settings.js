@@ -43,4 +43,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['set', 'settings', '설정', 'settings']
+module.exports.aliases = ['set', 'settings', '설정']

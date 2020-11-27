@@ -17,4 +17,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['volume', 'vol']
+// module.exports.aliases = ['volume', 'vol']
