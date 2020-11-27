@@ -112,17 +112,22 @@
 		},
 		"mylist": {
 			"play": {
-				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> 트랙번호는 `1`에서 `20`까지 가능합니다"
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> 트랙 번호는 `1`에서 `20`까지 가능합니다",
+				"usage": "%smylist play [트랙 번호]"
 			},
 			"query": {
 				"notfound": "죄송합니다, 리스트가 비었거나 찾으시는 트랙이 없습니다"
 			},
 			"set": {
 				"added": "트랙 #%s 추가됨: ",
-				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> 트랙번호는 `1`에서 `20`까지 가능합니다"
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> 트랙 번호는 `1`에서 `20`까지 가능합니다",
+				"usage": "`%smylist set <트랙 번호> <키워드/링크>`: 마이리스트에 트랙을 추가하거나 변경합니다"
 			},
-			"usage": "`%1$smylist query [트랙 번호]`: 마이리스트 목록을 보여줍니다\n`%1$smylist set <트랙 번호> <키워드/링크>`: 마이리스트에 트랙을 추가하거나 변경합니다\n`%1$smylist play <트랙 번호>`: 특정 트랙을 플레이합니다\n`%1$smylist remove <트랙 번호>`: 당신의 리스트에서 트랙을 제거합니다",
-			"removed": "#%s번 트랙을 제거 하였습니다"
+			"remove" : {
+				"usage": "`%smylist remove <트랙 번호>`: 당신의 리스트에서 트랙을 제거 합니다",
+				"removed": "#%s번 트랙을 제거 하였습니다"
+			},
+			"usage": "`%1$smylist query [트랙 번호]`: 마이리스트 목록을 보여줍니다\n`%1$smylist set <트랙 번호> <키워드/링크>`: 마이리스트에 트랙을 추가하거나 변경합니다\n`%1$smylist play <트랙 번호>`: 특정 트랙을 플레이합니다\n`%1$smylist remove <트랙 번호>`: 당신의 리스트에서 트랙을 제거합니다"
 		},
 		"play": {
 			"usage": "`%splay [키워드/링크]`로 유튜브 영상을 재생합니다"

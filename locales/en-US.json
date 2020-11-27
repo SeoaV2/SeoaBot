@@ -112,17 +112,22 @@
 		},
 		"mylist": {
 			"play": {
-				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high track number (Available range: `1` ~ `20`)"
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high track number (Available range: `1` ~ `20`)",
+				"usage": "`%smylist play <track number>`: Play specific track"
 			},
 			"query": {
 				"notfound": "Sorry, not found"
 			},
 			"set": {
 				"added": "Added track #%s: ",
-				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high track number (Available range: `1` ~ `20`)"
+				"toohighorlow": "<:__seoa_hand_paper:761581036026069022> Too low or Too high track number (Available range: `1` ~ `20`)",
+				"usage": "`%smylist set <track number> <keyword/link>`: Add or update your list"
 			},
-			"usage": "`%1$smylist query [track number]`: Show your list entries\n`%1$smylist set <track number> <keyword/link>`: Add or update your list\n`%1$smylist play <track number>`: Play specific track\n`%1$smylist remove <track number>`: Remove track in your list",
-			"removed": "Removed track #%s"
+			"remove": {
+				"removed": "Removed track #%s",
+				"usage": "`%smylist remove <track number>`: Remove track in your list"
+			},
+			"usage": "`%1$smylist query [track number]`: Show your list entries\n`%1$smylist set <track number> <keyword/link>`: Add or update your list\n`%1$smylist play <track number>`: Play specific track\n`%1$smylist remove <track number>`: Remove track in your list"
 		},
 		"play": {
 			"usage": "`%splay <keyword/link>` to play youtube videos (if you want to resume paused music, use `%1$sresume`)"
