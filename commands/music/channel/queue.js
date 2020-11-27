@@ -20,4 +20,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['queue', '큐']
+module.exports.aliases = ['q', 'queue', '큐']

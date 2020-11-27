@@ -10,4 +10,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['leave']
+module.exports.aliases = ['l', 'leave']
