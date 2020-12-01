@@ -75,7 +75,8 @@
 			"fix": "help.desc.fix",
 			"np": "show playing info",
 			"queue": "show queue list",
-			"skip": "skip to next song"
+			"skip": "skip to next song",
+			"mylist": "play/modify my favorite song list"
 		},
 		"global": {
 			"titles": {
