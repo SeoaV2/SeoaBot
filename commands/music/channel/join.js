@@ -11,4 +11,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['j', 'join']
+module.exports.aliases = ['join', 'j']

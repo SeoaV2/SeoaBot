@@ -151,4 +151,3 @@ async function fn (client, msg, locale) {
 
 module.exports = fn
 module.exports.aliases = ['mylist', 'my', '마이', '마이리스트']
-module.exports.devonly = true

@@ -9,4 +9,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['s', 'skip', '스킵']
+module.exports.aliases = ['skip', '스킵', 's']

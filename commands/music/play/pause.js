@@ -15,4 +15,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['ps', 'pause', 'resume']
+module.exports.aliases = ['pause', 'resume', 'ps']

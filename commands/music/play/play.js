@@ -53,4 +53,4 @@ async function fn (client, msg, locale) {
 }
 
 module.exports = fn
-module.exports.aliases = ['p', 'play']
+module.exports.aliases = ['play', 'p']
