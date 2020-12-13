@@ -1,4 +1,5 @@
 const Query = require('../classes/Query')
+const { obtVerify } = require('../utils/obt-module')
 const { registUser } = require('../utils/registDB')
 const debug = require('debug')('seoabot:event:message')
 
@@ -12,6 +13,7 @@ async function onMessage (client, msg) {
 
   if (author.bot) return
   if (!content.startsWith(prefix)) return
+  if (!(await obtVerify(client, msg))) return
 
   const [blocked] = await client.db.select('*').where('id', author.id).from('blacklist')
   if (blocked) return msg.channel.send(blocked.reason)
