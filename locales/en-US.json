@@ -102,7 +102,8 @@
 			"nodm": "<:__seoa_hand_paper:761581036026069022> Sorry, music operation is limited to server",
 			"notplaying": "<:__seoa_hand_paper:761581036026069022> It is not allowed to play void music (Play queue is empty)",
 			"nochannel": "<:__seoa_hand_paper:761581036026069022> We cannot found where you connected",
-			"notfound": "Did not find video: `%s`"
+			"notfound": "Did not find video: `%s`",
+			"nottrack": "Did not find track: `#%d`"
 		},
 		"pause": {
 			"pause": "<:__seoa_pause:761586957158842427> Paused",

@@ -86,6 +86,7 @@ async function fn (client, msg, locale) {
 
       // 트랙 검색
       const [trackData] = await client.db.select('*').where('uid', msg.author.id).andWhere('track', track).from('mylist')
+      if (!trackData) return msg.channel.send(locale('music.global.nottrack', track))
 
       // 큐 쿼리
       const { oid: prevOid } = ((await client.db.select('oid').where('gid', msg.guild.id).orderBy('oid', 'desc').limit(1).from('queue'))[0] || { oid: -1 })
