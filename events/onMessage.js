@@ -13,7 +13,7 @@ async function onMessage (client, msg) {
 
   if (author.bot) return
   if (!content.startsWith(prefix)) return
-  if (!(await obtVerify(client, msg))) return
+  if (!(process.env.DEBUG || await obtVerify(client, msg))) return
 
   const [blocked] = await client.db.select('*').where('id', author.id).from('blacklist')
   if (blocked) return msg.channel.send(blocked.reason)

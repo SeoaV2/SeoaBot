@@ -31,6 +31,8 @@ async function fn (client, msg, locale) {
         await client.db.raw('delete from seoafixed.queue where gid=\'' + msg.guild.id + '\' order by oid limit 1;')
         const [next] = await client.db.select('*').limit(1).where('gid', msg.guild.id).orderBy('oid').from('queue')
         if (!next) return await client.lavalink.leave(msg.guild.id)
+
+        const m2 = await msg.channel.send(locale('music.play.searching', getTips(msg.author.locale)))
         const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'https://www.youtube.com/watch?v=' + next.vid)).tracks
         if (!data) return
         player.play(data.track)
@@ -40,7 +42,7 @@ async function fn (client, msg, locale) {
           description: 'by ' + next.vauthor
         }).setImage('http://i3.ytimg.com/vi/' + next.vid + '/maxresdefault.jpg')
 
-        msg.channel.send(embed)
+        m2.edit(embed)
       })
     }
 

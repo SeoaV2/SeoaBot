@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js')
+const { getTips } = require('../../../utils/tips')
 const { getSongs } = require('../../../utils/lavalink')
 
 /**
@@ -17,6 +18,8 @@ async function fn (client, msg, locale) {
       // 트렉 번호 숫자로 변환 후 유효한지 확인
       const track = Number(msg.query.args[1])
       if (isNaN(track) || track % 1 !== 0 || track < 1 || track > 20) return msg.channel.send(locale('music.mylist.set.toohighorlow', track))
+
+      const m = await msg.channel.send(locale('music.play.searching', getTips(msg.author.locale)))
 
       // 검색
       const searchQuery = msg.query.args.join(' ')
@@ -41,8 +44,8 @@ async function fn (client, msg, locale) {
           description: 'by ' + vauthor
         }).setImage('http://i3.ytimg.com/vi/' + vid + '/maxresdefault.jpg')
 
-        msg.channel.send(embed)
-      } else msg.channel.send(locale('music.global.notfound', msg.query.args.slice(2).join(' ')))
+        m.edit('', embed)
+      } else m.edit(locale('music.global.notfound', msg.query.args.slice(2).join(' ')))
       break
     }
 
@@ -104,6 +107,7 @@ async function fn (client, msg, locale) {
             await client.db.raw('delete from seoafixed.queue where gid=\'' + msg.guild.id + '\' order by oid limit 1;')
             const [next] = await client.db.select('*').limit(1).where('gid', msg.guild.id).orderBy('oid').from('queue')
             if (!next) return await client.lavalink.leave(msg.guild.id)
+            const m = await msg.channel.send(locale('music.play.searching', getTips(msg.author.locale)))
             const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'https://www.youtube.com/watch?v=' + next.vid)).tracks
             if (!data) return
             player.play(data.track)
@@ -113,7 +117,7 @@ async function fn (client, msg, locale) {
               description: 'by ' + next.vauthor
             }).setImage('http://i3.ytimg.com/vi/' + next.vid + '/maxresdefault.jpg')
 
-            msg.channel.send(embed)
+            m.edit('', embed)
           })
         }
 
