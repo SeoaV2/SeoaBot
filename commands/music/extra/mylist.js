@@ -19,7 +19,8 @@ async function fn (client, msg, locale) {
       if (isNaN(track) || track % 1 !== 0 || track < 1 || track > 20) return msg.channel.send(locale('music.mylist.set.toohighorlow', track))
 
       // 검색
-      const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'ytsearch:' + msg.query.args.slice(2).join(' '))).tracks
+      const searchQuery = msg.query.args.join(' ')
+      const [data] = (await getSongs(client.lavalink.nodes.get('main'), searchQuery.startsWith('https://') ? searchQuery : ('ytsearch:' + searchQuery))).tracks
 
       if (data) {
         const { title: vname, author: vauthor, identifier: vid } = data.info

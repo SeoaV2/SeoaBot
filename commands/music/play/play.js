@@ -11,8 +11,9 @@ async function fn (client, msg, locale) {
   let player = client.lavalink.players.get(msg.guild.id)
   if (!player) player = await client.lavalink.join({ guild: msg.guild.id, channel: msg.member.voice.channel.id, node: 'main' })
 
-  if (!msg.query.args.join(' ')) return msg.channel.send(locale('music.play.usage', client.settings.prefix))
-  const [data] = (await getSongs(client.lavalink.nodes.get('main'), 'ytsearch:' + msg.query.args.join(' '))).tracks
+  const searchQuery = msg.query.args.join(' ')
+  if (!searchQuery) return msg.channel.send(locale('music.play.usage', client.settings.prefix))
+  const [data] = (await getSongs(client.lavalink.nodes.get('main'), searchQuery.startsWith('https://') ? searchQuery : ('ytsearch:' + searchQuery))).tracks
 
   if (data) {
     const { title, author, identifier } = data.info
