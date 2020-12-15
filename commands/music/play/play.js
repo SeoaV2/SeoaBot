@@ -1,3 +1,4 @@
+const { getTips } = require('../../../utils/tips')
 const { getSongs } = require('../../../utils/lavalink')
 const { MessageEmbed } = require('discord.js')
 
@@ -10,6 +11,8 @@ async function fn (client, msg, locale) {
   if (!msg.member.voice.channel) return msg.channel.send(locale('music.global.nochannel'))
   let player = client.lavalink.players.get(msg.guild.id)
   if (!player) player = await client.lavalink.join({ guild: msg.guild.id, channel: msg.member.voice.channel.id, node: 'main' })
+
+  const m = await msg.channel.send(locale('music.play.searching', getTips(msg.author.locale)))
 
   const searchQuery = msg.query.args.join(' ')
   if (!searchQuery) return msg.channel.send(locale('music.play.usage', client.settings.prefix))
@@ -49,8 +52,8 @@ async function fn (client, msg, locale) {
       description: 'by ' + author
     }).setImage('http://i3.ytimg.com/vi/' + identifier + '/maxresdefault.jpg')
 
-    msg.channel.send(embed)
-  } else msg.channel.send(locale('music.global.notfound', msg.query.args.join(' ')))
+    m.edit('', embed)
+  } else m.edit(locale('music.global.notfound', msg.query.args.join(' ')))
 }
 
 module.exports = fn

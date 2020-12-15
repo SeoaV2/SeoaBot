@@ -1,0 +1,12 @@
+{
+  "en-US": [
+    "you can create your own playlist with `>mylist`",
+    "you can use Seoa in your language with `>set locale ko-KR`",
+    "you can play coding quizzes with `>quiz`"
+  ],
+  "ko-KR": [
+    "`>mylist`로 나만의 재생목록을 만들 수 있습니다",
+    "`>set locale en-US`를 사용하여 서아를 다른 언어로 즐길 수 있습니다",
+    "`>quiz`로 코딩 퀴즈를 풀어보세요!"
+  ]
+}
